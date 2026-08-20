@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CoastLink Travel</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- PWA theme color -->
+    <meta name="theme-color" content="#0f766e">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+
+        <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center text-xl">
+                    🌴
+                </div>
+
+                <div>
+                    <h1 class="font-bold text-lg leading-none">
+                        CoastLink
+                    </h1>
+
+                    <p class="text-xs text-slate-500">
+                        Travel & Tours
+                    </p>
+                </div>
+            </a>
+
+            <!-- Desktop navigation -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+
+                <a href="index.html" class="text-teal-600">
+                    Home
+                </a>
+
+                <a href="transfers.html" class="hover:text-teal-600">
+                    Transfers
+                </a>
+
+                <a href="accommodation.html" class="hover:text-teal-600">
+                    Stays
+                </a>
+
+                <a href="excursions.html" class="hover:text-teal-600">
+                    Excursions
+                </a>
+
+                <a href="contact.html" class="hover:text-teal-600">
+                    Contact
+                </a>
+
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button
+                id="menuButton"
+                class="md:hidden text-2xl"
+                aria-label="Open menu">
+
+                ☰
+
+            </button>
+
+        </div>
+
+        <!-- Mobile menu -->
+        <div
+            id="mobileMenu"
+            class="hidden md:hidden border-t border-slate-200 bg-white">
+
+            <div class="px-5 py-4 space-y-4">
+
+                <a href="index.html" class="block">
+                    Home
+                </a>
+
+                <a href="transfers.html" class="block">
+                    Transfers
+                </a>
+
+                <a href="accommodation.html" class="block">
+                    Accommodation
+                </a>
+
+                <a href="excursions.html" class="block">
+                    Excursions
+                </a>
+
+                <a href="contact.html" class="block">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section
+            class="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden">
+
+            <!-- Background image -->
+
+            <img
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85"
+                alt="Kenyan coast"
+                class="absolute inset-0 w-full h-full object-cover">
+
+            <!-- Dark overlay -->
+
+            <div class="absolute inset-0 bg-black/45"></div>
+
+
+            <!-- Hero content -->
+
+            <div class="relative z-10 text-center px-6 max-w-3xl pt-20">
+
+                <p class="uppercase tracking-[0.25em] text-sm mb-4 text-teal-200">
+                    Welcome to the Kenyan Coast
+                </p>
+
+                <h2 class="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6">
+
+                    Discover.
+                    <br>
+
+                    Travel.
+                    <br>
+
+                    Experience.
+
+                </h2>
+
+                <p class="text-lg text-white/90 max-w-xl mx-auto mb-8">
+
+                    Explore Mombasa, Malindi and the beautiful Kenyan coast
+                    with comfortable transfers, amazing stays and unforgettable
+                    excursions.
+
+                </p>
+
+
+                <!-- Buttons -->
+
+                <div class="flex flex-col sm:flex-row justify-center gap-3">
+
+                    <a
+                        href="excursions.html"
+                        class="bg-teal-500 hover:bg-teal-400 text-white px-7 py-4 rounded-2xl font-semibold transition">
+
+                        Explore the Coast
+
+                    </a>
+
+                    <a
+                        href="contact.html"
+                        class="bg-white/15 backdrop-blur-md border border-white/30 hover:bg-white/25 px-7 py-4 rounded-2xl font-semibold transition">
+
+                        Contact Us
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVICES
+        ========================== -->
+
+        <section class="max-w-6xl mx-auto px-5 py-16">
+
+            <div class="text-center mb-10">
+
+                <p class="text-teal-600 font-semibold text-sm uppercase tracking-wider">
+                    What we offer
+                </p>
+
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">
+                    Everything for your coastal journey
+                </h2>
+
+                <p class="text-slate-500 mt-3 max-w-xl mx-auto">
+                    From getting there to exploring the coast,
+                    we've got your journey covered.
+                </p>
+
+            </div>
+
+
+            <!-- Service cards -->
+
+            <div class="grid md:grid-cols-3 gap-5">
+
+
+                <!-- Transfers -->
+
+                <a
+                    href="transfers.html"
+                    class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+
+                    <div class="h-48 overflow-hidden">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80"
+                            alt="Travel transfer"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="text-3xl mb-3">
+                            🚐
+                        </div>
+
+                        <h3 class="text-xl font-bold">
+                            Transfers
+                        </h3>
+
+                        <p class="text-slate-500 mt-2">
+                            Comfortable private transfers between
+                            Mombasa, Malindi and other destinations.
+                        </p>
+
+                        <span class="inline-block mt-4 text-teal-600 font-semibold">
+                            Explore transfers →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Accommodation -->
+
+                <a
+                    href="accommodation.html"
+                    class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+
+                    <div class="h-48 overflow-hidden">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80"
+                            alt="Coastal accommodation"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="text-3xl mb-3">
+                            🏨
+                        </div>
+
+                        <h3 class="text-xl font-bold">
+                            Accommodation
+                        </h3>
+
+                        <p class="text-slate-500 mt-2">
+                            Discover comfortable hotels, villas and
+                            apartments along the coast.
+                        </p>
+
+                        <span class="inline-block mt-4 text-teal-600 font-semibold">
+                            Explore stays →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Excursions -->
+
+                <a
+                    href="excursions.html"
+                    class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+
+                    <div class="h-48 overflow-hidden">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80"
+                            alt="Coastal excursion"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="text-3xl mb-3">
+                            🌴
+                        </div>
+
+                        <h3 class="text-xl font-bold">
+                            Excursions
+                        </h3>
+
+                        <p class="text-slate-500 mt-2">
+                            Experience marine adventures, cultural tours,
+                            island trips and more.
+                        </p>
+
+                        <span class="inline-block mt-4 text-teal-600 font-semibold">
+                            Explore excursions →
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CALL TO ACTION
+        ========================== -->
+
+        <section class="px-5 pb-24">
+
+            <div class="max-w-6xl mx-auto rounded-[2rem] bg-teal-700 text-white p-8 md:p-14 text-center">
+
+                <h2 class="text-3xl md:text-4xl font-bold">
+                    Ready to explore the coast?
+                </h2>
+
+                <p class="mt-3 text-teal-100 max-w-xl mx-auto">
+                    Contact our team and let us help you plan
+                    your perfect coastal experience.
+                </p>
+
+                <a
+                    href="https://wa.me/254700000000"
+                    class="inline-block mt-7 bg-white text-teal-700 px-7 py-4 rounded-2xl font-bold hover:bg-teal-50 transition">
+
+                    💬 Chat on WhatsApp
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+<!-- =========================
+     EXPLORE MENU
+========================== -->
+
+<div
+    id="exploreMenu"
+    class="hidden fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm">
+
+    <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-[2rem] p-6">
+
+        <div class="flex items-center justify-between mb-6">
+
+            <div>
+
+                <p class="text-teal-600 text-sm font-semibold">
+                    EXPLORE
+                </p>
+
+                <h2 class="text-2xl font-bold">
+                    What are you looking for?
+                </h2>
+
+            </div>
+
+            <button
+                id="closeExplore"
+                class="w-10 h-10 bg-slate-100 rounded-xl">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-3">
+
+
+            <a
+                href="transfers.html"
+                class="bg-slate-50 rounded-2xl p-5">
+
+                <div class="text-3xl">
+                    🚐
+                </div>
+
+                <h3 class="font-bold mt-3">
+                    Transfers
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Travel around the coast
+                </p>
+
+            </a>
+
+
+            <a
+                href="accommodation.html"
+                class="bg-slate-50 rounded-2xl p-5">
+
+                <div class="text-3xl">
+                    🏨
+                </div>
+
+                <h3 class="font-bold mt-3">
+                    Accommodation
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Find somewhere to stay
+                </p>
+
+            </a>
+
+
+            <a
+                href="excursions.html"
+                class="bg-slate-50 rounded-2xl p-5">
+
+                <div class="text-3xl">
+                    🌴
+                </div>
+
+                <h3 class="font-bold mt-3">
+                    Excursions
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Discover experiences
+                </p>
+
+            </a>
+
+
+            <a
+                href="about.html"
+                class="bg-slate-50 rounded-2xl p-5">
+
+                <div class="text-3xl">
+                    ℹ️
+                </div>
+
+                <h3 class="font-bold mt-3">
+                    About Us
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Learn about us
+                </p>
+
+            </a>
+
+        </div>
+
+
+        <a
+            href="contact.html"
+            class="block text-center mt-4 bg-teal-600 text-white py-4 rounded-2xl font-bold">
+
+            📞 Contact CoastLink
+
+        </a>
+
+    </div>
+
+</div>
+    <!-- =========================
+         MOBILE BOTTOM NAVIGATION
+    ========================== -->
+
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200">
+
+        <div class="grid grid-cols-3 text-center">
+
+            <a href="index.html" class="py-3 text-teal-600">
+
+                <div class="text-xl">
+                    🏠
+                </div>
+
+                <span class="text-xs">
+                    Home
+                </span>
+
+            </a>
+
+
+            
+             <button
+    id="exploreButton"
+    class="py-3 text-slate-500 w-full">
+
+    <div class="text-xl">
+        🧭
+    </div>
+
+    <span class="text-xs">
+        Explore
+    </span>
+
+</button>   
+
+
+
+            <a href="contact.html" class="py-3 text-slate-500">
+
+                <div class="text-xl">
+                    ☎️
+                </div>
+
+                <span class="text-xs">
+                    Contact
+                </span>
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+<script src="js/config.js"></script>
+<script src="js/navigation.js"></script>
+
+    <script>
+
+        const menuButton = document.getElementById("menuButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuButton.addEventListener("click", () => {
+
+            mobileMenu.classList.toggle("hidden");
+
+        });
+
+    </script>
+
+    <script>
+    if ("serviceWorker" in navigator) {
+
+        window.addEventListener("load", () => {
+
+            navigator.serviceWorker.register("./service-worker.js")
+                .then(() => {
+                    console.log("CoastLink service worker registered.");
+                })
+                .catch(error => {
+                    console.error("Service worker registration failed:", error);
+                });
+
+        });
+
+    }
+</script>
+
+</body>
+</html>
