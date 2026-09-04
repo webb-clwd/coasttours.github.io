@@ -4,36 +4,141 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Excursions | CoastLink Travel</title>
+    <title>Excursions | CoastLink</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+     <!--   font icon-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <meta name="theme-color" content="#0f766e">
-
+    <meta name="theme-color" content="#020617">
     <link rel="manifest" href="manifest.json">
+
+    <!-- =========================
+         ANIMATION STYLES
+    ========================== -->
+
+    <style>
+
+        /* Fade + slide up */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* Slide from left */
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .slide-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+        /* Slide from right */
+        .slide-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .slide-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+        /* Image zoom on cards */
+        .excursion-card img {
+            transition: transform 0.7s ease;
+        }
+
+        .excursion-card:hover img {
+            transform: scale(1.08);
+        }
+
+
+        /* Smooth hover */
+        .excursion-card {
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+        }
+
+
+        /* Hero image subtle zoom */
+        .excursion-slide img {
+            transition: transform 6s ease;
+        }
+
+        .excursion-slide.opacity-100 img {
+            transform: scale(1.04);
+        }
+
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0f766e;
+            border-radius: 10px;
+        }
+
+    </style>
+    
+    
+
+
+
 
 </head>
 
 
-<body class="bg-slate-50 text-slate-900 pb-24">
+<body class="bg-slate-950 text-white pb-24">
 
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <header
+        class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-xl border-b border-white/10">
 
         <div class="max-w-6xl mx-auto px-5 py-4 flex items-center gap-4">
 
             <a
                 href="index.html"
-                class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center">
+                class="w-10 h-10 rounded-xl bg-white/10 hover:bg-teal-600 flex items-center justify-center transition">
 
                 ←
 
             </a>
+
 
             <div>
 
@@ -41,7 +146,7 @@
                     Excursions
                 </h1>
 
-                <p class="text-xs text-slate-500">
+                <p class="text-xs text-slate-400">
                     Experiences worth remembering
                 </p>
 
@@ -53,71 +158,276 @@
 
 
 
-    <!-- MAIN -->
+    <!-- =========================
+         MAIN
+    ========================== -->
 
     <main>
 
 
-        <!-- INTRO -->
+        <!-- =========================
+             INTRO
+        ========================== -->
 
-        <section class="max-w-6xl mx-auto px-5 pt-8 pb-8">
+        <section
+            class="max-w-6xl mx-auto px-5 pt-10 pb-8 reveal">
 
-            <p class="text-teal-600 font-semibold text-sm uppercase tracking-wider">
+            <p
+                class="text-teal-400 font-semibold text-sm uppercase tracking-wider">
+
                 Explore Kenya's Coast
+
             </p>
 
-            <h2 class="text-3xl md:text-5xl font-bold mt-2">
+
+            <h2
+                class="text-3xl md:text-5xl font-bold mt-2">
+
                 Make memories.
+
             </h2>
 
-            <p class="text-slate-500 mt-3 max-w-xl">
+
+            <p
+                class="text-slate-400 mt-3 max-w-xl leading-relaxed">
+
                 Discover beaches, islands, marine life, culture and
                 unforgettable adventures along the Kenyan coast.
+
             </p>
 
         </section>
 
 
 
-        <!-- FEATURED EXPERIENCE -->
+        <!-- =========================
+             EXCURSION IMAGE SLIDER
+        ========================== -->
 
-        <section class="max-w-6xl mx-auto px-5">
+        <section
+            class="max-w-6xl mx-auto px-5 pb-10 reveal">
 
-            <div class="relative rounded-[2rem] overflow-hidden h-[420px] md:h-[520px]">
-
-                <img
-                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85"
-                    alt="Ocean excursion"
-                    class="absolute inset-0 w-full h-full object-cover">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div
+                id="excursionSlider"
+                class="relative h-64 md:h-[420px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
 
 
-                <div class="absolute bottom-0 left-0 right-0 p-7 md:p-10 text-white">
+                <!-- SLIDE 1 -->
 
-                    <span class="inline-block bg-teal-500 px-3 py-1 rounded-lg text-xs font-bold uppercase">
+                <div
+                    class="excursion-slide absolute inset-0 opacity-100 transition-opacity duration-700">
 
-                        Featured Experience
+                    <img
+                        src="img/e1.jpg"
+                        alt="Indian Ocean excursion"
+                        class="w-full h-full object-cover">
 
-                    </span>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent">
+                    </div>
 
-                    <h2 class="text-3xl md:text-5xl font-bold mt-3">
-                        Explore the Indian Ocean
-                    </h2>
 
-                    <p class="text-white/80 mt-3 max-w-xl">
-                        Spend the day discovering the beauty of the Kenyan
-                        coastline with an unforgettable marine adventure.
-                    </p>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
 
-                    <a
-                        href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20your%20Indian%20Ocean%20excursion."
+                        <p
+                            class="text-sm font-semibold uppercase tracking-wider text-teal-300">
 
-                        class="inline-block mt-6 bg-white text-slate-900 px-6 py-3 rounded-xl font-bold">
+                            Marine adventures
 
-                        💬 Enquire Now
+                        </p>
 
-                    </a>
+
+                        <h2
+                            class="text-2xl md:text-4xl font-bold mt-2">
+
+                            Explore the Indian Ocean
+
+                        </h2>
+
+
+                        <p
+                            class="text-white/75 mt-2 max-w-lg">
+
+                            Discover the beauty of the Kenyan coastline
+                            through unforgettable marine experiences.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SLIDE 2 -->
+
+                <div
+                    class="excursion-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+
+                    <img
+                        src="img/e2.jpg"
+                        alt="Kenyan island excursion"
+                        class="w-full h-full object-cover">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent">
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
+
+                        <p
+                            class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+
+                            Island escapes
+
+                        </p>
+
+
+                        <h2
+                            class="text-2xl md:text-4xl font-bold mt-2">
+
+                            Discover coastal islands
+
+                        </h2>
+
+
+                        <p
+                            class="text-white/75 mt-2 max-w-lg">
+
+                            Escape to beautiful islands, clear waters
+                            and unforgettable coastal scenery.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SLIDE 3 -->
+
+                <div
+                    class="excursion-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+
+                    <img
+                        src="img/e3.jpg"
+                        alt="Kenyan coastal culture"
+                        class="w-full h-full object-cover">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent">
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
+
+                        <p
+                            class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+
+                            Culture & heritage
+
+                        </p>
+
+
+                        <h2
+                            class="text-2xl md:text-4xl font-bold mt-2">
+
+                            Experience coastal culture
+
+                        </h2>
+
+
+                        <p
+                            class="text-white/75 mt-2 max-w-lg">
+
+                            Discover the history, traditions and
+                            culture that make the Kenyan coast unique.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SLIDE 4 -->
+
+                <div
+                    class="excursion-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+
+                    <img
+                        src="img/e4.jpg"
+                        alt="Kenyan safari"
+                        class="w-full h-full object-cover">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent">
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
+
+                        <p
+                            class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+
+                            Wildlife adventures
+
+                        </p>
+
+
+                        <h2
+                            class="text-2xl md:text-4xl font-bold mt-2">
+
+                            Go beyond the beach
+
+                        </h2>
+
+
+                        <p
+                            class="text-white/75 mt-2 max-w-lg">
+
+                            Combine your coastal holiday with an
+                            unforgettable Kenyan wildlife experience.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SLIDER DOTS -->
+
+                <div
+                    class="absolute bottom-5 right-6 flex gap-2 z-10">
+
+                    <button
+                        class="excursion-slider-dot w-2.5 h-2.5 rounded-full bg-white"
+                        data-slide="0">
+                    </button>
+
+                    <button
+                        class="excursion-slider-dot w-2.5 h-2.5 rounded-full bg-white/50"
+                        data-slide="1">
+                    </button>
+
+                    <button
+                        class="excursion-slider-dot w-2.5 h-2.5 rounded-full bg-white/50"
+                        data-slide="2">
+                    </button>
+
+                    <button
+                        class="excursion-slider-dot w-2.5 h-2.5 rounded-full bg-white/50"
+                        data-slide="3">
+                    </button>
 
                 </div>
 
@@ -127,75 +437,64 @@
 
 
 
-        <!-- CATEGORIES -->
+        <!-- =========================
+             POPULAR EXCURSIONS
+        ========================== -->
 
-        <section class="max-w-6xl mx-auto px-5 py-12">
+        <section
+            class="max-w-6xl mx-auto px-5 pb-12">
 
-            <div class="flex gap-3 overflow-x-auto pb-2">
+            <div class="mb-7 reveal">
 
-                <button class="bg-teal-600 text-white px-5 py-3 rounded-full whitespace-nowrap font-semibold">
-                    All
-                </button>
+                <p
+                    class="text-teal-400 font-semibold text-sm uppercase tracking-wider">
 
-                <button class="bg-white px-5 py-3 rounded-full whitespace-nowrap border border-slate-200">
-                    🌊 Marine
-                </button>
+                    EXPERIENCES
 
-                <button class="bg-white px-5 py-3 rounded-full whitespace-nowrap border border-slate-200">
-                    🏝️ Islands
-                </button>
-
-                <button class="bg-white px-5 py-3 rounded-full whitespace-nowrap border border-slate-200">
-                    🏛️ Culture
-                </button>
-
-                <button class="bg-white px-5 py-3 rounded-full whitespace-nowrap border border-slate-200">
-                    🦁 Safari
-                </button>
-
-            </div>
-
-        </section>
+                </p>
 
 
+                <h2
+                    class="text-2xl md:text-3xl font-bold mt-1">
 
-        <!-- EXCURSION CARDS -->
+                    Popular excursions
 
-        <section class="max-w-6xl mx-auto px-5 pb-12">
+                </h2>
 
-            <div class="flex items-end justify-between mb-6">
 
-                <div>
+                <p
+                    class="text-slate-400 mt-2 max-w-xl">
 
-                    <p class="text-teal-600 font-semibold text-sm">
-                        EXPERIENCES
-                    </p>
+                    Choose an experience you're interested in and
+                    send us your requirements. We'll help you plan it.
 
-                    <h2 class="text-2xl md:text-3xl font-bold mt-1">
-                        Popular excursions
-                    </h2>
-
-                </div>
+                </p>
 
             </div>
 
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+            <div
+                class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
 
                 <!-- CARD 1 -->
 
-                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+                <article
+                    class="excursion-card slide-left bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
 
-                    <div class="relative h-56">
+                    <div class="relative h-56 overflow-hidden">
 
                         <img
-                            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+                            src="img/e1.jpg"
                             alt="Beach experience"
                             class="w-full h-full object-cover">
 
-                        <span class="absolute top-3 left-3 bg-white/90 px-3 py-1 rounded-xl text-xs font-semibold">
-                            🌊 Marine
+                        <span
+                            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold text-white">
+
+                            Marine
+
                         </span>
 
                     </div>
@@ -203,35 +502,39 @@
 
                     <div class="p-5">
 
-                        <p class="text-xs text-teal-600 font-semibold">
+                        <p
+                            class="text-xs text-teal-400 font-semibold">
+
                             MALINDI
+
                         </p>
 
-                        <h3 class="text-xl font-bold mt-1">
+
+                        <h3
+                            class="text-xl font-bold mt-1">
+
                             Marine Park Adventure
+
                         </h3>
 
-                        <p class="text-slate-500 text-sm mt-2">
+
+                        <p
+                            class="text-slate-400 text-sm mt-2">
+
                             Explore beautiful marine life and enjoy
                             a day on the Indian Ocean.
+
                         </p>
 
-                        <div class="flex justify-between items-center mt-5">
 
-                            <span class="font-bold">
-                                From KSh 3,500
-                            </span>
+                        <button
+                            type="button"
+                            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+                            data-service="Marine Park Adventure">
 
-                            <a
-                                href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20the%20Marine%20Park%20Adventure."
+                            Enquire about this experience
 
-                                class="bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
-
-                                Enquire
-
-                            </a>
-
-                        </div>
+                        </button>
 
                     </div>
 
@@ -241,17 +544,21 @@
 
                 <!-- CARD 2 -->
 
-                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+                <article
+                    class="excursion-card reveal bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
 
-                    <div class="relative h-56">
+                    <div class="relative h-56 overflow-hidden">
 
                         <img
-                            src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=80"
+                            src="img/e2.jpg"
                             alt="Island excursion"
                             class="w-full h-full object-cover">
 
-                        <span class="absolute top-3 left-3 bg-white/90 px-3 py-1 rounded-xl text-xs font-semibold">
-                            🏝️ Islands
+                        <span
+                            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold text-white">
+
+                            Islands
+
                         </span>
 
                     </div>
@@ -259,35 +566,39 @@
 
                     <div class="p-5">
 
-                        <p class="text-xs text-teal-600 font-semibold">
+                        <p
+                            class="text-xs text-teal-400 font-semibold">
+
                             SOUTH COAST
+
                         </p>
 
-                        <h3 class="text-xl font-bold mt-1">
+
+                        <h3
+                            class="text-xl font-bold mt-1">
+
                             Island Escape
+
                         </h3>
 
-                        <p class="text-slate-500 text-sm mt-2">
+
+                        <p
+                            class="text-slate-400 text-sm mt-2">
+
                             Enjoy a beautiful island experience,
                             clear waters and coastal scenery.
+
                         </p>
 
-                        <div class="flex justify-between items-center mt-5">
 
-                            <span class="font-bold">
-                                From KSh 5,000
-                            </span>
+                        <button
+                            type="button"
+                            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+                            data-service="Island Escape">
 
-                            <a
-                                href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20the%20Island%20Escape."
+                            Enquire about this experience
 
-                                class="bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
-
-                                Enquire
-
-                            </a>
-
-                        </div>
+                        </button>
 
                     </div>
 
@@ -297,17 +608,21 @@
 
                 <!-- CARD 3 -->
 
-                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+                <article
+                    class="excursion-card slide-right bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
 
-                    <div class="relative h-56">
+                    <div class="relative h-56 overflow-hidden">
 
                         <img
-                            src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80"
-                            alt="Cultural tour"
+                            src="img/e3.jpg"
+                            alt="Coastal cultural experience"
                             class="w-full h-full object-cover">
 
-                        <span class="absolute top-3 left-3 bg-white/90 px-3 py-1 rounded-xl text-xs font-semibold">
-                            🏛️ Culture
+                        <span
+                            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold text-white">
+
+                            Culture
+
                         </span>
 
                     </div>
@@ -315,35 +630,39 @@
 
                     <div class="p-5">
 
-                        <p class="text-xs text-teal-600 font-semibold">
+                        <p
+                            class="text-xs text-teal-400 font-semibold">
+
                             KILIFI
+
                         </p>
 
-                        <h3 class="text-xl font-bold mt-1">
+
+                        <h3
+                            class="text-xl font-bold mt-1">
+
                             Coastal Cultural Tour
+
                         </h3>
 
-                        <p class="text-slate-500 text-sm mt-2">
+
+                        <p
+                            class="text-slate-400 text-sm mt-2">
+
                             Discover the history, traditions and
                             culture of the Kenyan coast.
+
                         </p>
 
-                        <div class="flex justify-between items-center mt-5">
 
-                            <span class="font-bold">
-                                From KSh 2,500
-                            </span>
+                        <button
+                            type="button"
+                            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+                            data-service="Coastal Cultural Tour">
 
-                            <a
-                                href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20the%20Coastal%20Cultural%20Tour."
+                            Enquire about this experience
 
-                                class="bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
-
-                                Enquire
-
-                            </a>
-
-                        </div>
+                        </button>
 
                     </div>
 
@@ -353,17 +672,21 @@
 
                 <!-- CARD 4 -->
 
-                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+                <article
+                    class="excursion-card slide-left bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
 
-                    <div class="relative h-56">
+                    <div class="relative h-56 overflow-hidden">
 
                         <img
-                            src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80"
+                            src="img/e4.jpg"
                             alt="Safari"
                             class="w-full h-full object-cover">
 
-                        <span class="absolute top-3 left-3 bg-white/90 px-3 py-1 rounded-xl text-xs font-semibold">
-                            🦁 Safari
+                        <span
+                            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold text-white">
+
+                            Safari
+
                         </span>
 
                     </div>
@@ -371,35 +694,39 @@
 
                     <div class="p-5">
 
-                        <p class="text-xs text-teal-600 font-semibold">
+                        <p
+                            class="text-xs text-teal-400 font-semibold">
+
                             TSAVO
+
                         </p>
 
-                        <h3 class="text-xl font-bold mt-1">
+
+                        <h3
+                            class="text-xl font-bold mt-1">
+
                             Tsavo Safari
+
                         </h3>
 
-                        <p class="text-slate-500 text-sm mt-2">
+
+                        <p
+                            class="text-slate-400 text-sm mt-2">
+
                             Experience Kenya's wildlife on an
                             unforgettable safari adventure.
+
                         </p>
 
-                        <div class="flex justify-between items-center mt-5">
 
-                            <span class="font-bold">
-                                From KSh 15,000
-                            </span>
+                        <button
+                            type="button"
+                            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+                            data-service="Tsavo Safari">
 
-                            <a
-                                href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20the%20Tsavo%20Safari."
+                            Enquire about this experience
 
-                                class="bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
-
-                                Enquire
-
-                            </a>
-
-                        </div>
+                        </button>
 
                     </div>
 
@@ -409,17 +736,21 @@
 
                 <!-- CARD 5 -->
 
-                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+                <article
+                    class="excursion-card reveal bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
 
-                    <div class="relative h-56">
+                    <div class="relative h-56 overflow-hidden">
 
                         <img
-                            src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&fit=crop&w=900&q=80"
+                            src="img/e5.jpg"
                             alt="Snorkeling"
                             class="w-full h-full object-cover">
 
-                        <span class="absolute top-3 left-3 bg-white/90 px-3 py-1 rounded-xl text-xs font-semibold">
-                            🤿 Marine
+                        <span
+                            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold text-white">
+
+                            Marine
+
                         </span>
 
                     </div>
@@ -427,35 +758,39 @@
 
                     <div class="p-5">
 
-                        <p class="text-xs text-teal-600 font-semibold">
+                        <p
+                            class="text-xs text-teal-400 font-semibold">
+
                             WATAMU
+
                         </p>
 
-                        <h3 class="text-xl font-bold mt-1">
+
+                        <h3
+                            class="text-xl font-bold mt-1">
+
                             Snorkeling Experience
+
                         </h3>
 
-                        <p class="text-slate-500 text-sm mt-2">
+
+                        <p
+                            class="text-slate-400 text-sm mt-2">
+
                             Discover the underwater beauty of
                             the Kenyan coast.
+
                         </p>
 
-                        <div class="flex justify-between items-center mt-5">
 
-                            <span class="font-bold">
-                                From KSh 4,000
-                            </span>
+                        <button
+                            type="button"
+                            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+                            data-service="Snorkeling Experience">
 
-                            <a
-                                href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20the%20Snorkeling%20Experience."
+                            Enquire about this experience
 
-                                class="bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
-
-                                Enquire
-
-                            </a>
-
-                        </div>
+                        </button>
 
                     </div>
 
@@ -465,17 +800,21 @@
 
                 <!-- CARD 6 -->
 
-                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+                <article
+                    class="excursion-card slide-right bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
 
-                    <div class="relative h-56">
+                    <div class="relative h-56 overflow-hidden">
 
                         <img
-                            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+                            src="img/e6.jpg"
                             alt="Sunset cruise"
                             class="w-full h-full object-cover">
 
-                        <span class="absolute top-3 left-3 bg-white/90 px-3 py-1 rounded-xl text-xs font-semibold">
-                            🌅 Cruise
+                        <span
+                            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold text-white">
+
+                            Cruise
+
                         </span>
 
                     </div>
@@ -483,35 +822,39 @@
 
                     <div class="p-5">
 
-                        <p class="text-xs text-teal-600 font-semibold">
+                        <p
+                            class="text-xs text-teal-400 font-semibold">
+
                             MOMBASA
+
                         </p>
 
-                        <h3 class="text-xl font-bold mt-1">
+
+                        <h3
+                            class="text-xl font-bold mt-1">
+
                             Sunset Cruise
+
                         </h3>
 
-                        <p class="text-slate-500 text-sm mt-2">
+
+                        <p
+                            class="text-slate-400 text-sm mt-2">
+
                             Relax on the water and enjoy the
                             beautiful coastal sunset.
+
                         </p>
 
-                        <div class="flex justify-between items-center mt-5">
 
-                            <span class="font-bold">
-                                From KSh 3,000
-                            </span>
+                        <button
+                            type="button"
+                            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+                            data-service="Sunset Cruise">
 
-                            <a
-                                href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20the%20Sunset%20Cruise."
+                            Enquire about this experience
 
-                                class="bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
-
-                                Enquire
-
-                            </a>
-
-                        </div>
+                        </button>
 
                     </div>
 
@@ -523,33 +866,391 @@
 
 
 
-        <!-- CTA -->
+        <!-- =========================
+             EXCURSION REQUEST FORM
+        ========================== -->
 
-        <section class="px-5 pb-10">
+        <section
+            class="max-w-6xl mx-auto px-5 pb-12">
 
-            <div class="max-w-6xl mx-auto bg-teal-700 text-white rounded-3xl p-8 md:p-12 text-center">
+            <div
+                id="excursionRequest"
+                class="reveal bg-slate-900 border border-white/10 rounded-3xl shadow-2xl p-6 md:p-8">
 
-                <div class="text-4xl">
-                    🌴
+
+                <div class="mb-7">
+
+                    <p
+                        class="text-teal-400 font-semibold uppercase text-sm tracking-wider">
+
+                        Plan your experience
+
+                    </p>
+
+
+                    <h3
+                        class="text-2xl md:text-3xl font-bold mt-2">
+
+                        Plan your excursion
+
+                    </h3>
+
+
+                    <p
+                        class="text-slate-400 mt-2">
+
+                        Tell us what kind of experience you're looking for
+                        and our team will help you find the right option.
+
+                    </p>
+
                 </div>
 
-                <h2 class="text-3xl font-bold mt-4">
-                    Your next adventure starts here.
-                </h2>
 
-                <p class="text-teal-100 mt-3 max-w-xl mx-auto">
-                    Tell us what kind of experience you're looking for
-                    and we'll help you plan your coastal adventure.
+
+                <!-- DESTINATION -->
+
+                <div class="mb-5">
+
+                    <label
+                        for="excursionLocation"
+                        class="block text-sm font-semibold mb-2">
+
+                        Where would you like to go?
+
+                    </label>
+
+
+                    <select
+                        id="excursionLocation"
+                        class="w-full bg-slate-950 border border-white/10 text-white rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                        <option value="">
+                            Select destination
+                        </option>
+
+                        <option value="Mombasa">
+                            Mombasa
+                        </option>
+
+                        <option value="Diani">
+                            Diani
+                        </option>
+
+                        <option value="Kilifi">
+                            Kilifi
+                        </option>
+
+                        <option value="Watamu">
+                            Watamu
+                        </option>
+
+                        <option value="Malindi">
+                            Malindi
+                        </option>
+
+                        <option value="Tsavo">
+                            Tsavo
+                        </option>
+
+                        <option value="Other coastal destination">
+                            Other destination
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DATE + GUESTS -->
+
+                <div
+                    class="grid md:grid-cols-2 gap-4 mb-5">
+
+
+                    <div>
+    <label
+        for="excursionDate"
+        class="block text-sm font-semibold mb-2 text-slate-200">
+
+        Preferred date
+
+    </label>
+
+    <input
+        type="date"
+        id="excursionDate"
+        min=""
+        class="w-full bg-slate-900 text-white border border-slate-700 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500"
+        style="color-scheme: dark;"
+    >
+</div>
+
+
+                    <div>
+
+                        <label
+                            for="excursionGuests"
+                            class="block text-sm font-semibold mb-2">
+
+                            Number of guests
+
+                        </label>
+
+
+                        <select
+                            id="excursionGuests"
+                            class="w-full bg-slate-950 border border-white/10 text-white rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                            <option value="">
+                                Select number of guests
+                            </option>
+
+                            <option value="1 guest">
+                                1 guest
+                            </option>
+
+                            <option value="2 guests">
+                                2 guests
+                            </option>
+
+                            <option value="3 guests">
+                                3 guests
+                            </option>
+
+                            <option value="4 guests">
+                                4 guests
+                            </option>
+
+                            <option value="5 guests">
+                                5 guests
+                            </option>
+
+                            <option value="6+ guests">
+                                6+ guests
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EXCURSION TYPE -->
+
+                <div class="mb-5">
+
+                    <label
+                        for="excursionType"
+                        class="block text-sm font-semibold mb-2">
+
+                        What kind of experience are you interested in?
+
+                    </label>
+
+
+                    <select
+                        id="excursionType"
+                        class="w-full bg-slate-950 border border-white/10 text-white rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                        <option value="">
+                            Select experience
+                        </option>
+
+                        <option value="Marine / Ocean">
+                            Marine / Ocean
+                        </option>
+
+                        <option value="Island trip">
+                            Island trip
+                        </option>
+
+                        <option value="Snorkeling">
+                            Snorkeling
+                        </option>
+
+                        <option value="Boat / Sunset cruise">
+                            Boat / Sunset cruise
+                        </option>
+
+                        <option value="Cultural tour">
+                            Cultural tour
+                        </option>
+
+                        <option value="Safari / Wildlife">
+                            Safari / Wildlife
+                        </option>
+
+                        <option value="Beach experience">
+                            Beach experience
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SPECIFIC EXPERIENCE -->
+
+                <div class="mb-5">
+
+                    <label
+                        for="selectedExcursion"
+                        class="block text-sm font-semibold mb-2">
+
+                        Preferred excursion
+
+                    </label>
+
+
+                    <select
+                        id="selectedExcursion"
+                        class="w-full bg-slate-950 border border-white/10 text-white rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                        <option value="">
+                            No specific excursion
+                        </option>
+
+                        <option value="Marine Park Adventure">
+                            Marine Park Adventure
+                        </option>
+
+                        <option value="Island Escape">
+                            Island Escape
+                        </option>
+
+                        <option value="Coastal Cultural Tour">
+                            Coastal Cultural Tour
+                        </option>
+
+                        <option value="Tsavo Safari">
+                            Tsavo Safari
+                        </option>
+
+                        <option value="Snorkeling Experience">
+                            Snorkeling Experience
+                        </option>
+
+                        <option value="Sunset Cruise">
+                            Sunset Cruise
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- ADDITIONAL MESSAGE -->
+
+                <div class="mb-6">
+
+                    <label
+                        for="excursionMessage"
+                        class="block text-sm font-semibold mb-2">
+
+                        Anything else you'd like us to know?
+
+                    </label>
+
+
+                    <textarea
+                        id="excursionMessage"
+                        rows="4"
+                        placeholder="Tell us about your preferences, pickup location, special requests, etc."
+                        class="w-full bg-slate-950 border border-white/10 text-white placeholder-slate-600 rounded-2xl px-4 py-4 outline-none resize-none focus:ring-2 focus:ring-teal-500"></textarea>
+
+                </div>
+
+
+
+                <!-- WHATSAPP BUTTON -->
+
+                <button
+                    id="excursionEnquiry"
+                    type="button"
+                    class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-4 rounded-2xl transition shadow-lg">
+
+                    Find Excursion Options
+
+                </button>
+
+
+                <p
+                    class="text-xs text-slate-500 text-center mt-4">
+
+                    Your request will open WhatsApp so our team can
+                    help you plan your excursion.
+
                 </p>
 
-                <a
-                    href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20help%20planning%20a%20coastal%20excursion."
+            </div>
 
-                    class="inline-block mt-6 bg-white text-teal-700 px-7 py-4 rounded-xl font-bold">
+        </section>
 
-                    💬 Plan My Experience
 
-                </a>
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section
+            class="px-5 pb-10 reveal">
+
+            <div
+                class="max-w-6xl mx-auto relative overflow-hidden bg-gradient-to-br from-teal-800 to-slate-900 border border-teal-500/20 text-white rounded-[2rem] p-8 md:p-12 text-center shadow-2xl">
+
+
+                <div
+                    class="absolute -top-20 -right-20 w-64 h-64 bg-teal-400/10 rounded-full blur-3xl">
+                </div>
+
+
+                <div
+                    class="relative z-10">
+
+                    <p
+                        class="text-teal-300 font-semibold uppercase text-sm tracking-wider">
+
+                        CoastLink Travel
+
+                    </p>
+
+
+                    <h2
+                        class="text-3xl md:text-4xl font-bold mt-3">
+
+                        Your next adventure starts here.
+
+                    </h2>
+
+
+                    <p
+                        class="text-teal-100/80 mt-3 max-w-xl mx-auto">
+
+                        Not sure which experience is right for you?
+                        Tell us what you're looking for and we'll help.
+
+                    </p>
+
+
+                    <a
+                        href="#excursionRequest"
+                        class="inline-block mt-6 bg-white text-teal-800 hover:bg-teal-50 px-7 py-4 rounded-xl font-bold transition">
+
+                        Plan My Experience
+
+                    </a>
+
+                </div>
 
             </div>
 
@@ -557,139 +1258,163 @@
 
     </main>
 
+
+
     <!-- =========================
-     EXPLORE MENU
-========================== -->
+         EXPLORE MENU
+    ========================== -->
 
-<div
-    id="exploreMenu"
-    class="hidden fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm">
+    <div
+        id="exploreMenu"
+        class="hidden fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm">
 
-    <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-[2rem] p-6">
 
-        <div class="flex items-center justify-between mb-6">
+        <div
+            class="absolute bottom-0 left-0 right-0 bg-slate-900 border-t border-white/10 rounded-t-[2rem] p-6">
 
-            <div>
 
-                <p class="text-teal-600 text-sm font-semibold">
-                    EXPLORE
-                </p>
+            <div
+                class="flex items-center justify-between mb-6">
 
-                <h2 class="text-2xl font-bold">
-                    What are you looking for?
-                </h2>
+
+                <div>
+
+                    <p
+                        class="text-teal-400 text-sm font-semibold">
+
+                        EXPLORE
+
+                    </p>
+
+
+                    <h2
+                        class="text-2xl font-bold">
+
+                        What are you looking for?
+
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="closeExplore"
+                    class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl">
+
+                    ✕
+
+                </button>
 
             </div>
 
-            <button
-                id="closeExplore"
-                class="w-10 h-10 bg-slate-100 rounded-xl">
 
-                ✕
 
-            </button>
+            <div
+                class="grid grid-cols-2 gap-3">
+
+
+                <a
+                    href="transfers.html"
+                    class="bg-slate-800 border border-white/10 rounded-2xl p-5 hover:border-teal-500 transition">
+
+                    <div class="text-3xl">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+
+                    <h3 class="font-bold mt-3">
+                        Transfers
+                    </h3>
+
+                    <p class="text-xs text-slate-400 mt-1">
+                        Travel around the coast
+                    </p>
+
+                </a>
+
+
+
+                <a
+                    href="accommodation.html"
+                    class="bg-slate-800 border border-white/10 rounded-2xl p-5 hover:border-teal-500 transition">
+
+                    <div class="text-3xl">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+
+                    <h3 class="font-bold mt-3">
+                        Accommodation
+                    </h3>
+
+                    <p class="text-xs text-slate-400 mt-1">
+                        Find somewhere to stay
+                    </p>
+
+                </a>
+
+
+
+                <a
+                    href="excursions.html"
+                    class="bg-slate-800 border border-teal-500 rounded-2xl p-5">
+
+                    <div class="text-3xl">
+                         <i class="fa-solid fa-compass"></i>
+                    </div>
+
+                    <h3 class="font-bold mt-3">
+                        Excursions
+                    </h3>
+
+                    <p class="text-xs text-slate-400 mt-1">
+                        Discover experiences
+                    </p>
+
+                </a>
+
+
+
+                <a
+                    href="about.html"
+                    class="bg-slate-800 border border-white/10 rounded-2xl p-5 hover:border-teal-500 transition">
+
+                    <div class="text-3xl">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+
+                    <h3 class="font-bold mt-3">
+                        About Us
+                    </h3>
+
+                    <p class="text-xs text-slate-400 mt-1">
+                        Learn about us
+                    </p>
+
+                </a>
+
+            </div>
+
+
+
+            <a
+                href="contact.html"
+                class="block text-center mt-4 bg-teal-600 hover:bg-teal-500 text-white py-4 rounded-2xl font-bold transition">
+
+                Contact CoastLink
+
+            </a>
 
         </div>
-
-
-        <div class="grid grid-cols-2 gap-3">
-
-
-            <a
-                href="transfers.html"
-                class="bg-slate-50 rounded-2xl p-5">
-
-                <div class="text-3xl">
-                    🚐
-                </div>
-
-                <h3 class="font-bold mt-3">
-                    Transfers
-                </h3>
-
-                <p class="text-xs text-slate-500 mt-1">
-                    Travel around the coast
-                </p>
-
-            </a>
-
-
-            <a
-                href="accommodation.html"
-                class="bg-slate-50 rounded-2xl p-5">
-
-                <div class="text-3xl">
-                    🏨
-                </div>
-
-                <h3 class="font-bold mt-3">
-                    Accommodation
-                </h3>
-
-                <p class="text-xs text-slate-500 mt-1">
-                    Find somewhere to stay
-                </p>
-
-            </a>
-
-
-            <a
-                href="excursions.html"
-                class="bg-slate-50 rounded-2xl p-5">
-
-                <div class="text-3xl">
-                    🌴
-                </div>
-
-                <h3 class="font-bold mt-3">
-                    Excursions
-                </h3>
-
-                <p class="text-xs text-slate-500 mt-1">
-                    Discover experiences
-                </p>
-
-            </a>
-
-
-            <a
-                href="about.html"
-                class="bg-slate-50 rounded-2xl p-5">
-
-                <div class="text-3xl">
-                    ℹ️
-                </div>
-
-                <h3 class="font-bold mt-3">
-                    About Us
-                </h3>
-
-                <p class="text-xs text-slate-500 mt-1">
-                    Learn about us
-                </p>
-
-            </a>
-
-        </div>
-
-
-        <a
-            href="contact.html"
-            class="block text-center mt-4 bg-teal-600 text-white py-4 rounded-2xl font-bold">
-
-            📞 Contact CoastLink
-
-        </a>
 
     </div>
 
-</div>
 
 
+    <!-- =========================
+         MOBILE NAVIGATION
+    ========================== -->
 
-    <!-- MOBILE NAVIGATION -->
-
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200">
+    <nav
+        class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-t border-white/10">
 
         <div class="grid grid-cols-3 text-center">
 
@@ -698,7 +1423,7 @@
                 class="py-3 text-slate-500">
 
                 <div class="text-xl">
-                    🏠
+                    <i class="fa-solid fa-house"></i>
                 </div>
 
                 <span class="text-xs">
@@ -708,19 +1433,21 @@
             </a>
 
 
-           <button
-    id="exploreButton"
-    class="py-3 text-slate-500 w-full">
 
-    <div class="text-xl">
-        🧭
-    </div>
+            <button
+                id="exploreButton"
+                class="py-3 text-teal-400 w-full">
 
-    <span class="text-xs">
-        Explore
-    </span>
+                <div class="text-xl">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
 
-</button>
+                <span class="text-xs">
+                    Explore
+                </span>
+
+            </button>
+
 
 
             <a
@@ -728,7 +1455,7 @@
                 class="py-3 text-slate-500">
 
                 <div class="text-xl">
-                    ☎️
+                     <i class="fa-solid fa-phone"></i>
                 </div>
 
                 <span class="text-xs">
@@ -742,10 +1469,185 @@
     </nav>
 
 
-<script src="js/config.js"></script>
-<script src="js/navigation.js"></script>
 
-    <!-- SERVICE WORKER -->
+    <!-- =========================
+         JAVASCRIPT FILES
+    ========================== -->
+
+    <script src="js/config.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/excursions.js"></script>
+
+
+
+    <!-- =========================
+         EXCURSION SLIDER
+    ========================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const slides =
+                document.querySelectorAll(".excursion-slide");
+
+            const dots =
+                document.querySelectorAll(".excursion-slider-dot");
+
+            let currentSlide = 0;
+
+
+            function showSlide(index) {
+
+                slides.forEach((slide, i) => {
+
+                    slide.classList.toggle(
+                        "opacity-100",
+                        i === index
+                    );
+
+                    slide.classList.toggle(
+                        "opacity-0",
+                        i !== index
+                    );
+
+                });
+
+
+                dots.forEach((dot, i) => {
+
+                    dot.classList.toggle(
+                        "bg-white",
+                        i === index
+                    );
+
+                    dot.classList.toggle(
+                        "bg-white/50",
+                        i !== index
+                    );
+
+                });
+
+
+                currentSlide = index;
+
+            }
+
+
+            dots.forEach((dot, index) => {
+
+                dot.addEventListener("click", () => {
+
+                    showSlide(index);
+
+                });
+
+            });
+
+
+            setInterval(() => {
+
+                currentSlide =
+                    (currentSlide + 1) % slides.length;
+
+                showSlide(currentSlide);
+
+            }, 5000);
+
+        });
+
+    </script>
+
+
+
+    <!-- =========================
+         DATE VALIDATION
+    ========================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const excursionDate =
+                document.getElementById("excursionDate");
+
+            const today = new Date();
+
+            const year =
+                today.getFullYear();
+
+            const month =
+                String(today.getMonth() + 1).padStart(2, "0");
+
+            const day =
+                String(today.getDate()).padStart(2, "0");
+
+            const todayFormatted =
+                `${year}-${month}-${day}`;
+
+            excursionDate.min =
+                todayFormatted;
+
+        });
+
+    </script>
+
+
+
+    <!-- =========================
+         SCROLL REVEAL
+    ========================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const animatedElements =
+                document.querySelectorAll(
+                    ".reveal, .slide-left, .slide-right"
+                );
+
+
+            const observer =
+                new IntersectionObserver(
+                    (entries) => {
+
+                        entries.forEach(entry => {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target.classList.add("active");
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        });
+
+                    },
+                    {
+                        threshold: 0.15
+                    }
+                );
+
+
+            animatedElements.forEach(element => {
+
+                observer.observe(element);
+
+            });
+
+        });
+
+    </script>
+
+
+
+    <!-- =========================
+         SERVICE WORKER
+    ========================== -->
 
     <script>
 
@@ -753,13 +1655,38 @@
 
             window.addEventListener("load", () => {
 
-                navigator.serviceWorker.register("./service-worker.js");
+                navigator.serviceWorker.register(
+                    "./service-worker.js"
+                );
 
             });
 
         }
 
     </script>
+
+
+     <!-- =========================
+         CALENDER CLICKS
+    ========================== -->
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const dateInput = document.getElementById("excursionDate");
+
+    dateInput.addEventListener("click", function () {
+
+        if (this.showPicker) {
+            this.showPicker();
+        }
+
+    });
+
+});
+</script>
+
+
 
 </body>
 

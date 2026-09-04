@@ -11,6 +11,9 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+     <!--   font icon-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <meta name="theme-color" content="#0f766e">
 
     <link rel="manifest" href="manifest.json">
@@ -18,7 +21,7 @@
 </head>
 
 
-<body class="bg-slate-50 text-slate-900 pb-24">
+<body class="bg-teal-100 text-slate-900 pb-24">
 
 
     <!-- =========================
@@ -87,15 +90,145 @@
 
             <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
 
-                <div class="h-56 md:h-80 overflow-hidden">
+                <!-- =========================
+     TRANSFER IMAGE SLIDER
+========================== -->
 
-                    <img
-                        src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=85"
-                        alt="Coastal transfer vehicle"
-                        class="w-full h-full object-cover">
+<div
+    id="transferSlider"
+    class="relative h-56 md:h-80 overflow-hidden">
 
-                </div>
+    <!-- SLIDE 1 -->
 
+    <div class="transfer-slide absolute inset-0 opacity-100 transition-opacity duration-700">
+
+        <img
+            src="img/t1.jpg"
+            alt="Coastal transfer vehicle"
+            class="w-full h-full object-cover">
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+
+        <div class="absolute bottom-0 left-0 p-5 md:p-7 text-white">
+
+            <p class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+                Private transfers
+            </p>
+
+            <h3 class="text-2xl md:text-3xl font-bold mt-1">
+                Travel comfortably along the coast
+            </h3>
+
+        </div>
+
+    </div>
+
+
+    <!-- SLIDE 2 -->
+
+    <div class="transfer-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+
+        <img
+            src="img/t2.jpg"
+            alt="Airport transfer"
+            class="w-full h-full object-cover">
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+
+        <div class="absolute bottom-0 left-0 p-5 md:p-7 text-white">
+
+            <p class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+                Airport transfers
+            </p>
+
+            <h3 class="text-2xl md:text-3xl font-bold mt-1">
+                Start your journey stress-free
+            </h3>
+
+        </div>
+
+    </div>
+
+
+    <!-- SLIDE 3 -->
+
+    <div class="transfer-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+
+        <img
+            src="img/t3.jpg"
+            alt="Hotel transfer"
+            class="w-full h-full object-cover">
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+
+        <div class="absolute bottom-0 left-0 p-5 md:p-7 text-white">
+
+            <p class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+                Hotel transfers
+            </p>
+
+            <h3 class="text-2xl md:text-3xl font-bold mt-1">
+                Door-to-door convenience
+            </h3>
+
+        </div>
+
+    </div>
+
+
+    <!-- SLIDE 4 -->
+
+    <div class="transfer-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+
+        <img
+            src="img/t4.jpg"
+            alt="Coastal road journey"
+            class="w-full h-full object-cover">
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+
+        <div class="absolute bottom-0 left-0 p-5 md:p-7 text-white">
+
+            <p class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+                Coastal journeys
+            </p>
+
+            <h3 class="text-2xl md:text-3xl font-bold mt-1">
+                Wherever the coast takes you
+            </h3>
+
+        </div>
+
+    </div>
+
+
+    <!-- SLIDER DOTS -->
+
+    <div class="absolute bottom-4 right-5 flex gap-2 z-10">
+
+        <button
+            class="transfer-slider-dot w-2.5 h-2.5 rounded-full bg-white"
+            data-slide="0">
+        </button>
+
+        <button
+            class="transfer-slider-dot w-2.5 h-2.5 rounded-full bg-white/50"
+            data-slide="1">
+        </button>
+
+        <button
+            class="transfer-slider-dot w-2.5 h-2.5 rounded-full bg-white/50"
+            data-slide="2">
+        </button>
+
+        <button
+            class="transfer-slider-dot w-2.5 h-2.5 rounded-full bg-white/50"
+            data-slide="3">
+        </button>
+
+    </div>
+
+</div>
 
                 <div class="p-6">
 
@@ -114,7 +247,7 @@
                         </div>
 
                         <div class="text-2xl">
-                            🚐
+                            <i class="fa-solid fa-car"></i>
                         </div>
 
                     </div>
@@ -133,7 +266,7 @@
                         <div class="bg-slate-50 rounded-2xl p-4">
 
                             <p class="text-xl">
-                                🚗
+                                <i class="fa-solid fa-car"></i>
                             </p>
 
                             <p class="font-semibold mt-1">
@@ -146,7 +279,7 @@
                         <div class="bg-slate-50 rounded-2xl p-4">
 
                             <p class="text-xl">
-                                👨‍✈️
+                                <i class="fa-solid fa-user"></i>
                             </p>
 
                             <p class="font-semibold mt-1">
@@ -159,7 +292,7 @@
                         <div class="bg-slate-50 rounded-2xl p-4">
 
                             <p class="text-xl">
-                                📍
+                                <i class="fa-solid fa-road"></i>
                             </p>
 
                             <p class="font-semibold mt-1">
@@ -172,7 +305,7 @@
                         <div class="bg-slate-50 rounded-2xl p-4">
 
                             <p class="text-xl">
-                                ⏰
+                                <i class="fa-regular fa-clock"></i>
                             </p>
 
                             <p class="font-semibold mt-1">
@@ -186,90 +319,151 @@
 
                     <!-- Enquiry -->
 
-                    <a
-                        href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20a%20transfer%20between%20Malindi%20and%20Mombasa."
+<a
+    href="#"
+    class="whatsapp-transfer block text-center mt-6 bg-teal-600 hover:bg-teal-500 text-white font-bold py-4 rounded-2xl transition"
+    data-route="Malindi and Mombasa">
 
-                        class="block text-center mt-6 bg-teal-600 hover:bg-teal-500 text-white font-bold py-4 rounded-2xl transition">
+    <i class="fa-solid fa-person-circle-question"></i> Enquire About Transfer
 
-                        💬 Enquire About Transfer
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             OTHER SERVICES
-        ========================== -->
-
-        <section class="max-w-6xl mx-auto px-5 py-12">
-
-            <h2 class="text-2xl font-bold mb-5">
-                Other transfer services
-            </h2>
-
-
-            <div class="grid md:grid-cols-3 gap-4">
-
-
-                <div class="bg-white p-6 rounded-3xl shadow-sm">
-
-                    <div class="text-3xl">
-                        ✈️
-                    </div>
-
-                    <h3 class="font-bold text-lg mt-4">
-                        Airport Transfers
-                    </h3>
-
-                    <p class="text-slate-500 text-sm mt-2">
-                        Convenient airport pickups and drop-offs.
-                    </p>
-
-                </div>
-
-
-                <div class="bg-white p-6 rounded-3xl shadow-sm">
-
-                    <div class="text-3xl">
-                        🏨
-                    </div>
-
-                    <h3 class="font-bold text-lg mt-4">
-                        Hotel Transfers
-                    </h3>
-
-                    <p class="text-slate-500 text-sm mt-2">
-                        Get directly from your hotel to your destination.
-                    </p>
-
-                </div>
-
-
-                <div class="bg-white p-6 rounded-3xl shadow-sm">
-
-                    <div class="text-3xl">
-                        🗺️
-                    </div>
-
-                    <h3 class="font-bold text-lg mt-4">
-                        Custom Transfers
-                    </h3>
-
-                    <p class="text-slate-500 text-sm mt-2">
-                        Need a different route? Contact us and we'll help.
-                    </p>
+</a>
 
                 </div>
 
             </div>
 
         </section>
+
+
+
+        
+<!-- =========================
+     OTHER SERVICES
+========================== -->
+
+<section class="max-w-6xl mx-auto px-5 py-12">
+
+    <h2 class="text-2xl font-bold mb-5">
+        Other transfer services
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-4">
+
+
+        <!-- AIRPORT TRANSFERS -->
+
+        <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
+
+            <div class="h-32 overflow-hidden">
+
+                <img
+                    src="img/t1.jpg"
+                    alt="Airport transfer"
+                    class="w-full h-full object-cover">
+
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="font-bold text-lg">
+                    Airport Transfers
+                </h3>
+
+                <p class="text-slate-500 text-sm mt-2">
+                    Convenient airport pickups and drop-offs.
+                </p>
+
+                <a
+                    href="#"
+                    class="whatsapp-transfer inline-block mt-5 bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold"
+                    data-route="an airport transfer">
+
+                    <i class="fa-solid fa-person-circle-question"></i>  Enquire
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HOTEL TRANSFERS -->
+
+        <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
+
+            <div class="h-32 overflow-hidden">
+
+                <img
+                    src="img/t2.jpg"
+                    alt="Hotel transfer"
+                    class="w-full h-full object-cover">
+
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="font-bold text-lg">
+                    Hotel Transfers
+                </h3>
+
+                <p class="text-slate-500 text-sm mt-2">
+                    Get directly from your hotel to your destination.
+                </p>
+
+                <a
+                    href="#"
+                    class="whatsapp-transfer inline-block mt-5 bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold"
+                    data-route="a hotel transfer">
+
+                    <i class="fa-solid fa-person-circle-question"></i>  Enquire
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CUSTOM TRANSFERS -->
+
+        <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
+
+            <div class="h-32 overflow-hidden">
+
+                <img
+                    src="img/t3.jpg"
+                    alt="Custom coastal transfer"
+                    class="w-full h-full object-cover">
+
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="font-bold text-lg">
+                    Custom Transfers
+                </h3>
+
+                <p class="text-slate-500 text-sm mt-2">
+                    Need a different route? Contact us and we'll help.
+                </p>
+
+                <a
+                    href="#"
+                    class="whatsapp-transfer inline-block mt-5 bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold"
+                    data-route="a custom transfer">
+
+                    <i class="fa-solid fa-person-circle-question"></i> Enquire
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 
 
@@ -304,6 +498,374 @@
     </main>
 
 <!-- =========================
+     TRANSFER REQUEST MODAL
+========================== -->
+
+<div
+    id="transferModal"
+    class="hidden fixed inset-0 z-[70] bg-black/50 backdrop-blur-sm overflow-y-auto">
+
+    <div class="min-h-full flex items-end md:items-center justify-center p-0 md:p-5">
+
+        <div class="bg-white w-full md:max-w-2xl md:rounded-3xl rounded-t-[2rem] p-6 md:p-8">
+
+            <!-- HEADER -->
+
+            <div class="flex items-center justify-between mb-6">
+
+                <div>
+
+                    <p class="text-teal-600 text-sm font-semibold uppercase tracking-wider">
+                        Transfer Request
+                    </p>
+
+                    <h2 class="text-2xl font-bold mt-1">
+                        Tell us about your trip
+                    </h2>
+
+                </div>
+
+                <button
+                    id="closeTransferModal"
+                    type="button"
+                    class="w-10 h-10 bg-slate-100 rounded-xl text-lg">
+
+                     <i class="fa-solid fa-circle-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- SELECTED SERVICE -->
+
+            <div class="bg-teal-50 rounded-2xl p-4 mb-6">
+
+                <p class="text-xs text-teal-600 font-semibold uppercase">
+                    Transfer type
+                </p>
+
+                <p
+                    id="selectedTransfer"
+                    class="font-bold mt-1">
+
+                    Transfer
+
+                </p>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="transferForm">
+
+
+                <!-- PICKUP + DESTINATION -->
+
+                <div class="grid md:grid-cols-2 gap-4 mb-5">
+
+                    <div>
+
+                        <label
+                            for="pickupLocation"
+                            class="block text-sm font-semibold mb-2">
+
+                            Pickup location
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pickupLocation"
+                            placeholder="e.g. Mombasa"
+                            required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                    </div>
+
+
+                    <div>
+
+                        <label
+                            for="destination"
+                            class="block text-sm font-semibold mb-2">
+
+                            Destination
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="destination"
+                            placeholder="e.g. Malindi"
+                            required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATE + TIME -->
+
+                <div class="grid md:grid-cols-2 gap-4 mb-5">
+
+                    <div>
+
+                        <label
+                            for="travelDate"
+                            class="block text-sm font-semibold mb-2">
+
+                            Travel date
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="travelDate"
+                            min=""
+                            required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                    </div>
+
+
+                    <div>
+
+                        <label
+                            for="pickupTime"
+                            class="block text-sm font-semibold mb-2">
+
+                            Pickup time
+
+                        </label>
+
+                        <input
+                            type="time"
+                            id="pickupTime"
+                            required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSENGERS -->
+
+                <div class="mb-5">
+
+                    <label
+                        for="passengers"
+                        class="block text-sm font-semibold mb-2">
+
+                        Number of passengers
+
+                    </label>
+
+                    <select
+                        id="passengers"
+                        required
+                        class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                        <option value="">
+                            Select number of passengers
+                        </option>
+
+                        <option value="1 passenger">
+                            1 passenger
+                        </option>
+
+                        <option value="2 passengers">
+                            2 passengers
+                        </option>
+
+                        <option value="3 passengers">
+                            3 passengers
+                        </option>
+
+                        <option value="4 passengers">
+                            4 passengers
+                        </option>
+
+                        <option value="5 passengers">
+                            5 passengers
+                        </option>
+
+                        <option value="6 passengers">
+                            6 passengers
+                        </option>
+
+                        <option value="7+ passengers">
+                            7+ passengers
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TRIP TYPE -->
+
+                <div class="mb-5">
+
+                    <label
+                        for="tripType"
+                        class="block text-sm font-semibold mb-2">
+
+                        Trip type
+
+                    </label>
+
+                    <select
+                        id="tripType"
+                        required
+                        class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                        <option value="One-way">
+                            One-way
+                        </option>
+
+                        <option value="Return">
+                            Return
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- RETURN DATE -->
+
+                <div
+                    id="returnDateContainer"
+                    class="hidden mb-5">
+
+                    <label
+                        for="returnDate"
+                        class="block text-sm font-semibold mb-2">
+
+                        Return date
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="returnDate"
+                        min=""
+                        class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                </div>
+
+
+                    <!-- PASSENGER NAME -->
+
+<div class="mb-5">
+
+    <label
+        for="passengerName"
+        class="block text-sm font-semibold mb-2">
+
+        Passenger name
+
+    </label>
+
+    <input
+        type="text"
+        id="passengerName"
+        placeholder="Enter your name"
+        required
+        class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+</div>
+
+
+<!-- PHONE NUMBER -->
+
+<div class="mb-5">
+
+    <label
+        for="passengerPhone"
+        class="block text-sm font-semibold mb-2">
+
+        Phone number
+
+    </label>
+
+    <input
+        type="tel"
+        id="passengerPhone"
+        placeholder="e.g. 0712345678"
+        required
+        class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+</div>
+
+
+
+
+
+
+
+                <!-- ADDITIONAL INFORMATION -->
+
+                <div class="mb-6">
+
+                    <label
+                        for="additionalInfo"
+                        class="block text-sm font-semibold mb-2">
+
+                        Additional information
+                        <span class="text-slate-400 font-normal">
+                            (optional)
+                        </span>
+
+                    </label>
+
+                    <textarea
+                        id="additionalInfo"
+                        rows="4"
+                        placeholder="Anything else we should know? For example, luggage or special requirements."
+                        class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500 resize-none"></textarea>
+
+                </div>
+
+
+                <!-- WHATSAPP BUTTON -->
+
+                <button
+                    type="submit"
+                    class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-4 rounded-2xl transition">
+
+                    <i class="fa-solid fa-person-circle-question"></i> Request Transfer
+
+                </button>
+
+
+                <p class="text-xs text-slate-400 text-center mt-4">
+
+                    Your request will open WhatsApp with the details you provided.
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+    
+
+<!-- =========================
      EXPLORE MENU
 ========================== -->
 
@@ -331,7 +893,7 @@
                 id="closeExplore"
                 class="w-10 h-10 bg-slate-100 rounded-xl">
 
-                ✕
+                <i class="fa-solid fa-circle-xmark"></i>
 
             </button>
 
@@ -346,7 +908,7 @@
                 class="bg-slate-50 rounded-2xl p-5">
 
                 <div class="text-3xl">
-                    🚐
+                     <i class="fa-solid fa-car"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
@@ -365,7 +927,7 @@
                 class="bg-slate-50 rounded-2xl p-5">
 
                 <div class="text-3xl">
-                    🏨
+                    <i class="fa-solid fa-building"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
@@ -384,7 +946,7 @@
                 class="bg-slate-50 rounded-2xl p-5">
 
                 <div class="text-3xl">
-                    🌴
+                    <i class="fa-solid fa-compass"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
@@ -403,7 +965,7 @@
                 class="bg-slate-50 rounded-2xl p-5">
 
                 <div class="text-3xl">
-                    ℹ️
+                    <i class="fa-solid fa-circle-info"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
@@ -423,7 +985,7 @@
             href="contact.html"
             class="block text-center mt-4 bg-teal-600 text-white py-4 rounded-2xl font-bold">
 
-            📞 Contact CoastLink
+             <i class="fa-solid fa-phone-flip"></i> Contact CoastLink
 
         </a>
 
@@ -443,7 +1005,7 @@
                class="py-3 text-slate-500">
 
                 <div class="text-xl">
-                    🏠
+                    <i class="fa-solid fa-house"></i>
                 </div>
 
                 <span class="text-xs">
@@ -458,7 +1020,7 @@
     class="py-3 text-slate-500 w-full">
 
     <div class="text-xl">
-        🧭
+        <i class="fa-solid fa-cloud"></i>
     </div>
 
     <span class="text-xs">
@@ -472,7 +1034,7 @@
                class="py-3 text-slate-500">
 
                 <div class="text-xl">
-                    ☎️
+                     <i class="fa-solid fa-phone"></i>
                 </div>
 
                 <span class="text-xs">
@@ -487,6 +1049,8 @@
 
 <script src="js/config.js"></script>
 <script src="js/navigation.js"></script>
+<script src="js/transfers.js"></script>
+<script src="js/transfer-slider.js"></script>
 
     <!-- SERVICE WORKER -->
 

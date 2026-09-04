@@ -11,6 +11,9 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+     <!--   font icon-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <meta name="theme-color" content="#0f766e">
 
     <link rel="manifest" href="manifest.json">
@@ -18,7 +21,7 @@
 </head>
 
 
-<body class="bg-slate-50 text-slate-900 pb-24">
+<body class="bg-teal-100 text-slate-900 pb-24">
 
 
     <!-- =========================
@@ -55,413 +58,578 @@
 
 
 
+    
+    
+<main>
+
     <!-- =========================
          INTRO
     ========================== -->
 
-    <main>
+    <section class="max-w-6xl mx-auto px-5 pt-8 pb-6">
 
-        <section class="max-w-6xl mx-auto px-5 pt-8 pb-6">
+        <p class="text-teal-600 font-semibold text-sm uppercase tracking-wider">
+            Stay by the coast
+        </p>
 
-            <p class="text-teal-600 font-semibold text-sm uppercase tracking-wider">
-                Stay by the coast
-            </p>
+        <h2 class="text-3xl md:text-5xl font-bold mt-2">
+            Find your perfect stay
+        </h2>
 
-            <h2 class="text-3xl md:text-5xl font-bold mt-2">
-                Find your perfect stay
-            </h2>
+        <p class="text-slate-500 mt-3 max-w-xl">
+            Looking for accommodation along the Kenyan coast?
+            Tell us what you need and we'll help you find available options.
+        </p>
 
-            <p class="text-slate-500 mt-3 max-w-xl">
-                Discover comfortable hotels, villas and apartments
-                around Mombasa, Malindi and the Kenyan coast.
-            </p>
+    </section>
 
-        </section>
+    <!-- =========================
+     ACCOMMODATION IMAGE SLIDER
+========================== -->
 
+<section class="max-w-6xl mx-auto px-5 pb-8">
 
+    <div
+        id="accommodationSlider"
+        class="relative h-64 md:h-[420px] rounded-[2rem] overflow-hidden shadow-sm">
 
-        <!-- =========================
-             FEATURED PROPERTY
-        ========================== -->
+        <!-- SLIDE 1 -->
 
-        <section class="max-w-6xl mx-auto px-5">
+        <div class="accommodation-slide absolute inset-0 opacity-100 transition-opacity duration-700">
 
-            <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
+            <img
+                src="img/a1.jpg"
+                alt="Coastal accommodation"
+                class="w-full h-full object-cover">
 
-                <div class="relative h-64 md:h-96">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
-                    <img
-                        src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1400&q=85"
-                        alt="Ocean View Resort"
-                        class="w-full h-full object-cover">
+            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
 
-                    <div class="absolute top-4 left-4">
+                <p class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+                    Coastal stays
+                </p>
 
-                        <span class="bg-white/90 backdrop-blur-md px-3 py-2 rounded-xl text-sm font-semibold">
+                <h2 class="text-2xl md:text-4xl font-bold mt-2">
+                    Wake up by the ocean
+                </h2>
 
-                            ⭐ Featured
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="p-6">
-
-                    <div class="flex justify-between gap-4">
-
-                        <div>
-
-                            <p class="text-sm text-teal-600 font-semibold">
-                                MOMBASA
-                            </p>
-
-                            <h3 class="text-2xl font-bold mt-1">
-                                Ocean View Resort
-                            </h3>
-
-                        </div>
-
-                        <div class="text-right">
-
-                            <p class="text-sm text-slate-500">
-                                From
-                            </p>
-
-                            <p class="text-xl font-bold">
-                                KSh 8,500
-                            </p>
-
-                            <p class="text-xs text-slate-400">
-                                per night
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <p class="text-slate-500 mt-4">
-
-                        A relaxing coastal getaway with comfortable rooms,
-                        ocean views, a swimming pool and easy access to
-                        the beach.
-
-                    </p>
-
-
-                    <!-- Amenities -->
-
-                    <div class="flex flex-wrap gap-2 mt-5">
-
-                        <span class="bg-slate-100 px-3 py-2 rounded-xl text-sm">
-                            🏖️ Beach
-                        </span>
-
-                        <span class="bg-slate-100 px-3 py-2 rounded-xl text-sm">
-                            🏊 Pool
-                        </span>
-
-                        <span class="bg-slate-100 px-3 py-2 rounded-xl text-sm">
-                            📶 Wi-Fi
-                        </span>
-
-                        <span class="bg-slate-100 px-3 py-2 rounded-xl text-sm">
-                            🍽️ Restaurant
-                        </span>
-
-                    </div>
-
-
-                    <a
-                        href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20Ocean%20View%20Resort."
-
-                        class="block text-center mt-6 bg-teal-600 hover:bg-teal-500 text-white font-bold py-4 rounded-2xl transition">
-
-                        💬 Enquire About This Stay
-
-                    </a>
-
-                </div>
+                <p class="text-white/80 mt-2 max-w-lg">
+                    Let us help you find accommodation that suits your trip.
+                </p>
 
             </div>
 
-        </section>
+        </div>
 
 
+        <!-- SLIDE 2 -->
 
-        <!-- =========================
-             PROPERTY LIST
-        ========================== -->
+        <div class="accommodation-slide absolute inset-0 opacity-0 transition-opacity duration-700">
 
-        <section class="max-w-6xl mx-auto px-5 py-12">
+            <img
+                src="img/a2.jpg"
+                alt="Coastal villa"
+                class="w-full h-full object-cover">
 
-            <div class="flex items-end justify-between mb-6">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
+
+                <p class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+                    Villas & apartments
+                </p>
+
+                <h2 class="text-2xl md:text-4xl font-bold mt-2">
+                    Find a place that feels like home
+                </h2>
+
+                <p class="text-white/80 mt-2 max-w-lg">
+                    From private villas to comfortable coastal apartments.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDE 3 -->
+
+        <div class="accommodation-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+
+            <img
+                src="img/a3.jpg"
+                alt="Coastal hotel"
+                class="w-full h-full object-cover">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
+
+                <p class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+                    Hotels & resorts
+                </p>
+
+                <h2 class="text-2xl md:text-4xl font-bold mt-2">
+                    Relax and enjoy the coast
+                </h2>
+
+                <p class="text-white/80 mt-2 max-w-lg">
+                    Tell us what you need and we'll check available options.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDE 4 -->
+
+        <div class="accommodation-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+
+            <img
+                src="img/a4.jpg"
+                alt="Beach accommodation"
+                class="w-full h-full object-cover">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
+
+                <p class="text-sm font-semibold uppercase tracking-wider text-teal-300">
+                    Your coastal escape
+                </p>
+
+                <h2 class="text-2xl md:text-4xl font-bold mt-2">
+                    Your stay, your way
+                </h2>
+
+                <p class="text-white/80 mt-2 max-w-lg">
+                    Share your preferences and we'll help you find a suitable stay.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDER DOTS -->
+
+        <div class="absolute bottom-5 right-6 flex gap-2 z-10">
+
+            <button
+                class="slider-dot w-2.5 h-2.5 rounded-full bg-white"
+                data-slide="0">
+            </button>
+
+            <button
+                class="slider-dot w-2.5 h-2.5 rounded-full bg-white/50"
+                data-slide="1">
+            </button>
+
+            <button
+                class="slider-dot w-2.5 h-2.5 rounded-full bg-white/50"
+                data-slide="2">
+            </button>
+
+            <button
+                class="slider-dot w-2.5 h-2.5 rounded-full bg-white/50"
+                data-slide="3">
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- =========================
+         ACCOMMODATION REQUEST
+    ========================== -->
+
+    <section class="max-w-6xl mx-auto px-5">
+
+        <div class="bg-white rounded-3xl shadow-sm p-6 md:p-8">
+
+            <div class="mb-7">
+
+                <div class="text-4xl">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold mt-3">
+                    Find available accommodation
+                </h3>
+
+                <p class="text-slate-500 mt-2">
+                    Give us a few details and our team will check
+                    available accommodation for you.
+                </p>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="mb-5">
+
+                <label
+                    for="accommodationLocation"
+                    class="block text-sm font-semibold mb-2">
+
+                    Where are you looking to stay?
+
+                </label>
+
+                <select
+                    id="accommodationLocation"
+                    class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                    <option value="">
+                        Select destination
+                    </option>
+
+                    <option value="Malindi">
+                        Malindi
+                    </option>
+
+                    <option value="Watamu">
+                        Watamu
+                    </option>
+
+                    <option value="Kilifi">
+                        Kilifi
+                    </option>
+
+                    <option value="Mombasa">
+                        Mombasa
+                    </option>
+
+                    <option value="Diani">
+                        Diani
+                    </option>
+
+                    <option value="Other coastal destination">
+                        Other coastal destination
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CHECK IN -->
+
+            <div class="grid md:grid-cols-2 gap-4 mb-5">
 
                 <div>
 
-                    <p class="text-teal-600 font-semibold text-sm">
-                        EXPLORE
-                    </p>
+                    <label
+                        for="checkIn"
+                        class="block text-sm font-semibold mb-2">
 
-                    <h2 class="text-2xl md:text-3xl font-bold mt-1">
-                        Popular stays
-                    </h2>
+                        Check-in
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="checkIn"
+                        class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
 
                 </div>
 
-                <span class="text-sm text-slate-400">
-                    3 properties
-                </span>
 
-            </div>
+                <!-- CHECK OUT -->
 
+                <div>
 
-            <div class="grid md:grid-cols-3 gap-5">
+                    <label
+                        for="checkOut"
+                        class="block text-sm font-semibold mb-2">
 
+                        Check-out
 
-                <!-- Property 1 -->
+                    </label>
 
-                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
-
-                    <div class="relative h-52">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80"
-                            alt="Palm Bay Villa"
-                            class="w-full h-full object-cover">
-
-                        <span class="absolute top-3 right-3 bg-white/90 px-3 py-1 rounded-xl text-xs font-semibold">
-
-                            Villa
-
-                        </span>
-
-                    </div>
-
-
-                    <div class="p-5">
-
-                        <p class="text-xs text-teal-600 font-semibold">
-                            MALINDI
-                        </p>
-
-                        <h3 class="text-lg font-bold mt-1">
-                            Palm Bay Villa
-                        </h3>
-
-                        <p class="text-slate-500 text-sm mt-2">
-                            Private coastal villa with spacious rooms
-                            and a peaceful garden.
-                        </p>
-
-                        <div class="flex items-center justify-between mt-4">
-
-                            <div>
-
-                                <span class="font-bold">
-                                    KSh 12,000
-                                </span>
-
-                                <span class="text-xs text-slate-400">
-                                    / night
-                                </span>
-
-                            </div>
-
-                            <a
-                                href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20Palm%20Bay%20Villa."
-
-                                class="bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
-
-                                Enquire
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- Property 2 -->
-
-                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
-
-                    <div class="relative h-52">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=80"
-                            alt="Coral Sands Hotel"
-                            class="w-full h-full object-cover">
-
-                        <span class="absolute top-3 right-3 bg-white/90 px-3 py-1 rounded-xl text-xs font-semibold">
-
-                            Hotel
-
-                        </span>
-
-                    </div>
-
-
-                    <div class="p-5">
-
-                        <p class="text-xs text-teal-600 font-semibold">
-                            WATAMU
-                        </p>
-
-                        <h3 class="text-lg font-bold mt-1">
-                            Coral Sands Hotel
-                        </h3>
-
-                        <p class="text-slate-500 text-sm mt-2">
-                            Modern rooms close to the beach with
-                            a relaxing coastal atmosphere.
-                        </p>
-
-                        <div class="flex items-center justify-between mt-4">
-
-                            <div>
-
-                                <span class="font-bold">
-                                    KSh 9,500
-                                </span>
-
-                                <span class="text-xs text-slate-400">
-                                    / night
-                                </span>
-
-                            </div>
-
-                            <a
-                                href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20Coral%20Sands%20Hotel."
-
-                                class="bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
-
-                                Enquire
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- Property 3 -->
-
-                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
-
-                    <div class="relative h-52">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=900&q=80"
-                            alt="Beachside Apartment"
-                            class="w-full h-full object-cover">
-
-                        <span class="absolute top-3 right-3 bg-white/90 px-3 py-1 rounded-xl text-xs font-semibold">
-
-                            Apartment
-
-                        </span>
-
-                    </div>
-
-
-                    <div class="p-5">
-
-                        <p class="text-xs text-teal-600 font-semibold">
-                            DIANI
-                        </p>
-
-                        <h3 class="text-lg font-bold mt-1">
-                            Beachside Apartment
-                        </h3>
-
-                        <p class="text-slate-500 text-sm mt-2">
-                            Comfortable self-catering apartment
-                            near the beach.
-                        </p>
-
-                        <div class="flex items-center justify-between mt-4">
-
-                            <div>
-
-                                <span class="font-bold">
-                                    KSh 7,000
-                                </span>
-
-                                <span class="text-xs text-slate-400">
-                                    / night
-                                </span>
-
-                            </div>
-
-                            <a
-                                href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20to%20enquire%20about%20Beachside%20Apartment."
-
-                                class="bg-teal-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
-
-                                Enquire
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             INFORMATION
-        ========================== -->
-
-        <section class="max-w-6xl mx-auto px-5 pb-12">
-
-            <div class="bg-slate-900 text-white rounded-3xl p-8 md:p-12">
-
-                <div class="max-w-2xl">
-
-                    <p class="text-teal-400 font-semibold text-sm uppercase">
-                        Need help choosing?
-                    </p>
-
-                    <h2 class="text-3xl font-bold mt-2">
-                        Let us help you find the right stay.
-                    </h2>
-
-                    <p class="text-slate-300 mt-3">
-                        Tell us your preferred location, dates and budget
-                        and our team can recommend suitable accommodation.
-                    </p>
-
-                    <a
-                        href="contact.html"
-                        class="inline-block mt-6 bg-teal-500 hover:bg-teal-400 px-6 py-3 rounded-xl font-bold">
-
-                        Contact Us
-
-                    </a>
+                    <input
+                        type="date"
+                        id="checkOut"
+                        class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
 
                 </div>
 
             </div>
 
-        </section>
 
-    </main>
+            <!-- GUESTS -->
+
+            <div class="mb-5">
+
+                <label
+                    for="guests"
+                    class="block text-sm font-semibold mb-2">
+
+                    Number of guests
+
+                </label>
+
+                <select
+                    id="guests"
+                    class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                    <option value="">
+                        Select number of guests
+                    </option>
+
+                    <option value="1 guest">
+                        1 guest
+                    </option>
+
+                    <option value="2 guests">
+                        2 guests
+                    </option>
+
+                    <option value="3 guests">
+                        3 guests
+                    </option>
+
+                    <option value="4 guests">
+                        4 guests
+                    </option>
+
+                    <option value="5 guests">
+                        5 guests
+                    </option>
+
+                    <option value="6+ guests">
+                        6+ guests
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ACCOMMODATION TYPE -->
+
+            <div class="mb-5">
+
+                <label
+                    for="accommodationType"
+                    class="block text-sm font-semibold mb-2">
+
+                    Preferred accommodation
+
+                </label>
+
+                <select
+                    id="accommodationType"
+                    class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                    <option value="">
+                        Any type
+                    </option>
+
+                    <option value="Hotel">
+                        Hotel
+                    </option>
+
+                    <option value="B&B">
+                        B&B
+                    </option>
+
+                    <option value="Villa">
+                        Villa
+                    </option>
+
+                    <option value="Apartment">
+                        Apartment
+                    </option>
+
+                    <option value="Resort">
+                        Resort
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- BUDGET -->
+
+            <div class="mb-6">
+
+                <label
+                    for="budget"
+                    class="block text-sm font-semibold mb-2">
+
+                    Approximate budget per night
+
+                </label>
+
+                <select
+                    id="budget"
+                    class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 outline-none focus:ring-2 focus:ring-teal-500">
+
+                    <option value="">
+                        No specific budget
+                    </option>
+
+                    <option value="Below KSh 5,000">
+                        Below KSh 5,000
+                    </option>
+
+                    <option value="KSh 5,000 - 10,000">
+                        KSh 5,000 - 10,000
+                    </option>
+
+                    <option value="KSh 10,000 - 20,000">
+                        KSh 10,000 - 20,000
+                    </option>
+
+                    <option value="Above KSh 20,000">
+                        Above KSh 20,000
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- WHATSAPP BUTTON -->
+
+            <button
+                id="accommodationEnquiry"
+                class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-4 rounded-2xl transition">
+
+            <i class="fa-solid fa-person-circle-question"></i>  Find Available Accommodation
+
+            </button>
+
+
+            <p class="text-xs text-slate-400 text-center mt-4">
+
+                Your request will open WhatsApp so our team can
+                check availability for you.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         HOW IT WORKS
+    ========================== -->
+
+    <section class="max-w-6xl mx-auto px-5 py-12">
+
+        <div class="grid md:grid-cols-3 gap-4">
+
+
+            <div class="bg-white rounded-3xl p-6 shadow-sm">
+
+                <div class="text-3xl">
+                    <i class="fa-solid fa-note-sticky"></i>
+                </div>
+
+                <h3 class="font-bold text-lg mt-4">
+                    1. Tell us what you need
+                </h3>
+
+                <p class="text-slate-500 text-sm mt-2">
+                    Choose your destination, dates, guests
+                    and accommodation preferences.
+                </p>
+
+            </div>
+
+
+            <div class="bg-white rounded-3xl p-6 shadow-sm">
+
+                <div class="text-3xl">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <h3 class="font-bold text-lg mt-4">
+                    2. We check availability
+                </h3>
+
+                <p class="text-slate-500 text-sm mt-2">
+                    Our team checks available accommodation
+                    that matches your requirements.
+                </p>
+
+            </div>
+
+
+            <div class="bg-white rounded-3xl p-6 shadow-sm">
+
+                <div class="text-3xl">
+                    <i class="fa-solid fa-person-circle-question"></i>
+                </div>
+
+                <h3 class="font-bold text-lg mt-4">
+                    3. Get your options
+                </h3>
+
+                <p class="text-slate-500 text-sm mt-2">
+                    We'll send you available options,
+                    prices and other relevant details.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GENERAL CTA
+    ========================== -->
+
+    <section class="px-5 pb-10">
+
+        <div class="max-w-6xl mx-auto bg-teal-700 text-white rounded-3xl p-8 md:p-12 text-center">
+
+            <div class="text-4xl">
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+
+            <h2 class="text-3xl font-bold mt-4">
+                Not sure what you need?
+            </h2>
+
+            <p class="text-teal-100 mt-3 max-w-xl mx-auto">
+                No problem. Contact our team and we'll help
+                you find something that suits your trip.
+            </p>
+
+            <a
+                href="#"
+                id="accommodationHelp"
+                class="inline-block mt-6 bg-white text-teal-700 px-7 py-4 rounded-xl font-bold">
+
+                <i class="fa-brands fa-whatsapp"></i> Talk to Our Team
+
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+
+
+
+
 
 <!-- =========================
      EXPLORE MENU
@@ -491,7 +659,7 @@
                 id="closeExplore"
                 class="w-10 h-10 bg-slate-100 rounded-xl">
 
-                ✕
+                 <i class="fa-solid fa-circle-xmark"></i>
 
             </button>
 
@@ -506,7 +674,7 @@
                 class="bg-slate-50 rounded-2xl p-5">
 
                 <div class="text-3xl">
-                    🚐
+                      <i class="fa-solid fa-car"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
@@ -525,7 +693,7 @@
                 class="bg-slate-50 rounded-2xl p-5">
 
                 <div class="text-3xl">
-                    🏨
+                    <i class="fa-solid fa-building"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
@@ -544,7 +712,7 @@
                 class="bg-slate-50 rounded-2xl p-5">
 
                 <div class="text-3xl">
-                    🌴
+                    <i class="fa-solid fa-compass"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
@@ -563,7 +731,7 @@
                 class="bg-slate-50 rounded-2xl p-5">
 
                 <div class="text-3xl">
-                    ℹ️
+                    <i class="fa-solid fa-circle-info"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
@@ -583,7 +751,7 @@
             href="contact.html"
             class="block text-center mt-4 bg-teal-600 text-white py-4 rounded-2xl font-bold">
 
-            📞 Contact CoastLink
+             <i class="fa-solid fa-phone-flip"></i> Contact CoastLink
 
         </a>
 
@@ -604,7 +772,7 @@
                 class="py-3 text-slate-500">
 
                 <div class="text-xl">
-                    🏠
+                    <i class="fa-solid fa-house"></i>
                 </div>
 
                 <span class="text-xs">
@@ -619,7 +787,7 @@
     class="py-3 text-slate-500 w-full">
 
     <div class="text-xl">
-        🧭
+        <i class="fa-solid fa-cloud"></i>
     </div>
 
     <span class="text-xs">
@@ -634,7 +802,7 @@
                 class="py-3 text-slate-500">
 
                 <div class="text-xl">
-                    ☎️
+                    <i class="fa-solid fa-phone"></i>
                 </div>
 
                 <span class="text-xs">
@@ -650,6 +818,8 @@
 
 <script src="js/config.js"></script>
 <script src="js/navigation.js"></script>
+<script src="js/accommodation.js"></script>
+<script src="js/accommodation-slider.js"></script>
     <!-- =========================
          SERVICE WORKER
     ========================== -->

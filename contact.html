@@ -9,252 +9,966 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <meta name="theme-color" content="#0f766e">
+     <!--   font icon-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <meta name="theme-color" content="#0f3d3e">
     <link rel="manifest" href="manifest.json">
+
+    <style>
+
+        /* =========================
+           ANIMATIONS
+        ========================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .slide-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .slide-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in {
+            animation: fadeIn 1.2s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .social-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .social-card {
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease;
+        }
+
+        /* Respect reduced motion */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal,
+            .slide-left,
+            .slide-right {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .float {
+                animation: none;
+            }
+
+        }
+
+    </style>
+
 </head>
 
-<body class="bg-slate-50 text-slate-900 pb-24">
 
-    <!-- HEADER -->
+<body class="bg-[#071f21] text-white pb-24">
 
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
 
-        <div class="max-w-6xl mx-auto px-5 py-4 flex items-center gap-4">
+<!-- =========================
+     HEADER
+========================== -->
 
-            <a href="index.html"
-               class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center">
-                ←
-            </a>
+<header class="sticky top-0 z-40 bg-[#071f21]/95 backdrop-blur-xl border-b border-white/10">
 
-            <div>
+    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center gap-4">
 
-                <h1 class="font-bold text-lg">
-                    Contact Us
-                </h1>
+        <a href="index.html"
+           class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-teal-600 transition">
 
-                <p class="text-xs text-slate-500">
-                    We're here to help
+            ←
+
+        </a>
+
+        <div>
+
+            <h1 class="font-bold text-lg">
+                Contact Us
+            </h1>
+
+            <p class="text-xs text-slate-400">
+                We're here to help
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     HERO INTRO
+========================== -->
+
+<section class="relative overflow-hidden">
+
+    <!-- Background glow -->
+
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-teal-500/20 blur-3xl rounded-full"></div>
+
+    <div class="absolute bottom-0 -left-20 w-72 h-72 bg-amber-400/10 blur-3xl rounded-full"></div>
+
+
+    <div class="max-w-5xl mx-auto px-5 pt-14 pb-14 text-center relative z-10 fade-in">
+
+        <div class="text-6xl float">
+            <i class="fa-solid fa-person-swimming"></i>
+        </div>
+
+        <p class="text-teal-300 font-semibold text-sm uppercase tracking-[0.2em] mt-6">
+
+            CoastLink Travel
+
+        </p>
+
+        <h2 class="text-4xl md:text-6xl font-bold mt-3 leading-tight">
+
+            Let's plan your
+            <span class="text-teal-400">
+                coastal journey.
+            </span>
+
+        </h2>
+
+        <p class="text-slate-400 mt-5 max-w-2xl mx-auto leading-relaxed">
+
+            Whether you're looking for a private transfer, a beautiful
+            place to stay or an unforgettable coastal experience,
+            our team is ready to help you plan your trip.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT OPTIONS
+========================== -->
+
+<section class="max-w-6xl mx-auto px-5 pb-16">
+
+    <div class="grid md:grid-cols-3 gap-5">
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            id="whatsappLink"
+            href="#"
+            class="slide-left group bg-[#103c3d] border border-white/10 rounded-3xl p-7 hover:border-teal-400/40 hover:bg-[#124749] transition">
+
+            <div class="w-16 h-16 rounded-2xl bg-green-500/15 flex items-center justify-center text-3xl">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+            </div>
+
+            <h3 class="font-bold text-xl mt-5">
+                WhatsApp
+            </h3>
+
+            <p class="text-slate-400 text-sm mt-2">
+                Chat directly with our travel team.
+            </p>
+
+            <p
+                id="whatsappNumber"
+                class="text-teal-300 font-semibold mt-4">
+            </p>
+
+        </a>
+
+
+
+        <!-- PHONE 
+
+        <a
+            id="phoneLink"
+            href="#"
+            class="reveal group bg-[#103c3d] border border-white/10 rounded-3xl p-7 hover:border-teal-400/40 hover:bg-[#124749] transition">
+
+            <div class="w-16 h-16 rounded-2xl bg-teal-500/15 flex items-center justify-center text-3xl">
+
+                 <i class="fa-solid fa-phone-flip"></i>
+
+            </div>
+
+            <h3 class="font-bold text-xl mt-5">
+                Call Us
+            </h3>
+
+            <p class="text-slate-400 text-sm mt-2">
+                Speak directly with our team.
+            </p>
+
+            <p
+                id="phoneNumber"
+                class="text-teal-300 font-semibold mt-4">
+            </p>
+
+        </a>-->
+
+
+
+<!-- PHONE -->
+
+<div
+    class="reveal group bg-[#103c3d] border border-white/10 rounded-3xl p-7 hover:border-teal-400/40 hover:bg-[#124749] transition">
+
+    <div class="w-16 h-16 rounded-2xl bg-teal-500/15 flex items-center justify-center text-3xl">
+
+        <i class="fa-solid fa-phone-flip"></i>
+
+    </div>
+
+    <h3 class="font-bold text-xl mt-5">
+        Call Us
+    </h3>
+
+    <p class="text-slate-400 text-sm mt-2">
+        Speak directly with our team.
+    </p>
+
+    <div class="mt-4 space-y-2">
+
+        <a
+            id="bookingPhoneLink"
+            href="#"
+            class="block text-teal-300 font-semibold hover:text-teal-200">
+
+            <i class="fa-solid fa-phone mr-2"></i>
+            <span id="bookingPhoneNumber"></span>
+
+        </a>
+
+        <a
+            id="supportPhoneLink"
+            href="#"
+            class="block text-teal-300 font-semibold hover:text-teal-200">
+
+            <i class="fa-solid fa-phone mr-2"></i>
+            <span id="supportPhoneNumber"></span>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- EMAIL -->
+
+        <a
+            id="emailLink"
+            href="#"
+            class="slide-right group bg-[#103c3d] border border-white/10 rounded-3xl p-7 hover:border-teal-400/40 hover:bg-[#124749] transition">
+
+            <div class="w-16 h-16 rounded-2xl bg-blue-500/15 flex items-center justify-center text-3xl">
+
+                <i class="fa-solid fa-envelope-circle-check"></i>
+
+            </div>
+
+            <h3 class="font-bold text-xl mt-5">
+                Email
+            </h3>
+
+            <p class="text-slate-400 text-sm mt-2">
+                Send us your travel enquiry.
+            </p>
+
+            <p
+                id="emailAddress"
+                class="text-teal-300 font-semibold mt-4 break-all">
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT COASTLINK
+========================== -->
+
+<section class="relative bg-[#0c3032] border-y border-white/5">
+
+    <div class="max-w-6xl mx-auto px-5 py-20">
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+
+            <!-- IMAGE -->
+
+            <div class="slide-left relative">
+
+                <div class="rounded-[2rem] overflow-hidden">
+
+                    <img
+                        src="img/c.jpg"
+                        alt="Kenyan coast"
+                        class="w-full h-[400px] object-cover">
+
+                </div>
+
+                <div class="absolute -bottom-5 -right-5 bg-teal-500 text-white rounded-2xl p-5 shadow-xl">
+
+                    <p class="text-2xl font-bold">
+                        Coast
+                    </p>
+
+                    <p class="text-xs text-teal-100">
+                        Travel differently
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TEXT -->
+
+            <div class="slide-right">
+
+                <p class="text-teal-300 font-semibold text-sm uppercase tracking-wider">
+                    About CoastLink
                 </p>
+
+                <h2 class="text-3xl md:text-4xl font-bold mt-3">
+                    Your connection to the Kenyan Coast
+                </h2>
+
+                <p class="text-slate-400 mt-5 leading-relaxed">
+
+                    CoastLink Travel & Tours helps travelers discover
+                    the beauty of Kenya's coast through reliable
+                    transportation, comfortable accommodation and
+                    memorable experiences.
+
+                </p>
+
+                <p class="text-slate-400 mt-4 leading-relaxed">
+
+                    From the beaches of Mombasa and Malindi to the
+                    hidden experiences along the coast, we're here to
+                    make your journey easier from the moment you arrive.
+
+                </p>
+
+
+                <div class="grid grid-cols-2 gap-4 mt-7">
+
+                    <div class="bg-white/5 rounded-2xl p-4">
+
+                        <p class="text-2xl">
+                            <i class="fa-solid fa-van-shuttle"></i>
+                        </p>
+
+                        <p class="font-semibold mt-2">
+                            Transfers
+                        </p>
+
+                    </div>
+
+                    <div class="bg-white/5 rounded-2xl p-4">
+
+                        <p class="text-2xl">
+                            <i class="fa-solid fa-umbrella-beach"></i>
+                        </p>
+
+                        <p class="font-semibold mt-2">
+                            Experiences
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
-    </header>
+    </div>
+
+</section>
 
 
-    <main>
 
-        <!-- INTRO -->
+<!-- =========================
+     RATINGS
+========================== -->
 
-        <section class="max-w-4xl mx-auto px-5 pt-10 pb-8 text-center">
+<section class="max-w-6xl mx-auto px-5 py-20">
 
-            <div class="text-5xl">
-                🌴
-            </div>
+    <div class="reveal bg-gradient-to-br from-[#123f40] to-[#0a292b] rounded-[2rem] border border-white/10 p-8 md:p-12 text-center">
 
-            <p class="text-teal-600 font-semibold text-sm uppercase mt-5">
-                Let's plan your journey
+        <p class="text-teal-300 uppercase tracking-wider text-sm font-semibold">
+            Guest experience
+        </p>
+
+        <h2 class="text-3xl md:text-4xl font-bold mt-2">
+            Loved by travelers
+        </h2>
+
+        <div class="flex justify-center gap-1 text-3xl mt-6">
+
+            ⭐
+            ⭐
+            ⭐
+            ⭐
+            ⭐
+
+        </div>
+
+        <p class="text-4xl font-bold mt-4">
+            5.0
+        </p>
+
+        <p class="text-slate-400 mt-2">
+            Guest rating
+        </p>
+
+        
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TESTIMONIALS
+========================== -->
+
+<section class="bg-[#06191b] border-y border-white/5">
+
+    <div class="max-w-6xl mx-auto px-5 py-20">
+
+        <div class="text-center reveal">
+
+            <p class="text-teal-300 text-sm font-semibold uppercase tracking-wider">
+                Guest stories
             </p>
 
-            <h2 class="text-4xl md:text-5xl font-bold mt-2">
-                How can we help?
+            <h2 class="text-3xl md:text-4xl font-bold mt-2">
+                What travelers say
             </h2>
 
-            <p class="text-slate-500 mt-4 max-w-xl mx-auto">
-                Have a question about transfers, accommodation or excursions?
-                Contact our team directly.
-            </p>
-
-        </section>
+        </div>
 
 
-        <!-- CONTACT OPTIONS -->
-
-        <section class="max-w-4xl mx-auto px-5">
-
-            <div class="grid md:grid-cols-3 gap-4">
+        <div class="grid md:grid-cols-3 gap-5 mt-10">
 
 
-                <!-- WhatsApp -->
+            <!-- TESTIMONIAL 1 -->
 
-                <a
-                   id="whatsappLink" href="https://wa.me/254700000000"
-                    class="bg-white rounded-3xl p-7 text-center shadow-sm hover:shadow-lg transition">
+            <div class="slide-left bg-[#103537] border border-white/10 rounded-3xl p-7">
 
-                    <div class="w-16 h-16 mx-auto rounded-2xl bg-green-100 flex items-center justify-center text-3xl">
-                        💬
-                    </div>
-
-                    <h3 class="font-bold text-xl mt-5">
-                        WhatsApp
-                    </h3>
-
-                    <p class="text-slate-500 text-sm mt-2">
-                        Chat with our team
-                    </p>
-
-                    <p class="text-teal-600 font-semibold mt-4">
-                      <span id="phoneNumber"></span>
-                    </p>
-
-                </a>
-
-
-                <!-- Phone -->
-
-                <a
-                    id="phoneLink" href="#"
-                    class="bg-white rounded-3xl p-7 text-center shadow-sm hover:shadow-lg transition">
-
-                    <div class="w-16 h-16 mx-auto rounded-2xl bg-teal-100 flex items-center justify-center text-3xl">
-                        📞
-                    </div>
-
-                    <h3 class="font-bold text-xl mt-5">
-                        Call Us
-                    </h3>
-
-                    <p class="text-slate-500 text-sm mt-2">
-                        Speak directly with us
-                    </p>
-
-                    <p class="text-teal-600 font-semibold mt-4">
-                        <span id="phoneNumber"></span>
-                    </p>
-
-                </a>
-
-
-                <!-- Email -->
-
-                <a
-                    id="emailLink" href="mailto:hello@coastlinktravel.com"
-                    class="bg-white rounded-3xl p-7 text-center shadow-sm hover:shadow-lg transition">
-
-                    <div class="w-16 h-16 mx-auto rounded-2xl bg-blue-100 flex items-center justify-center text-3xl">
-                        ✉️
-                    </div>
-
-                    <h3 class="font-bold text-xl mt-5">
-                        Email
-                    </h3>
-
-                    <p class="text-slate-500 text-sm mt-2">
-                        Send us an enquiry
-                    </p>
-
-                    <p class="text-teal-600 font-semibold mt-4 break-all">
-                        hello@coastlinktravel.com
-                    </p>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- LOCATION -->
-
-        <section class="max-w-4xl mx-auto px-5 py-10">
-
-            <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
-
-                <div class="p-7">
-
-                    <p class="text-teal-600 font-semibold text-sm uppercase">
-                        Find us
-                    </p>
-
-                    <h2 class="text-2xl font-bold mt-2">
-                        Our location
-                    </h2>
-
-                    <p class="text-slate-500 mt-2">
-                        Malindi, Kilifi County, Kenya
-                    </p>
-
+                <div class="text-amber-300">
+                    ⭐⭐⭐⭐⭐
                 </div>
 
+                <p class="text-slate-300 mt-5 leading-relaxed">
 
-                <!-- Map placeholder -->
+                    "Our transfer was smooth and comfortable.
+                    The communication was excellent from start to finish."
 
-                <div class="h-72 bg-slate-200 flex items-center justify-center">
-
-                    <div class="text-center">
-
-                        <div class="text-5xl">
-                            📍
-                        </div>
-
-                        <p class="font-bold mt-3">
-                            Malindi, Kenya
-                        </p>
-
-                        <a
-                            href="https://www.google.com/maps/search/?api=1&query=Malindi,Kenya"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-block mt-4 bg-teal-600 text-white px-5 py-3 rounded-xl font-semibold">
-
-                            Open in Google Maps
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- QUICK ENQUIRY -->
-
-        <section class="max-w-4xl mx-auto px-5 pb-12">
-
-            <div class="bg-teal-700 text-white rounded-[2rem] p-8 md:p-12 text-center">
-
-                <h2 class="text-3xl font-bold">
-                    Ready to explore?
-                </h2>
-
-                <p class="text-teal-100 mt-3">
-                    Start a conversation with our travel team.
                 </p>
 
-                <a
-                    href="https://wa.me/254700000000?text=Hello%20CoastLink%20Travel%2C%20I%20would%20like%20help%20planning%20my%20trip."
+                <div class="flex items-center gap-3 mt-6">
 
-                    class="inline-block mt-6 bg-white text-teal-700 px-7 py-4 rounded-xl font-bold">
+                    <div class="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center">
+                        A
+                    </div>
 
-                    💬 Start WhatsApp Chat
+                    <div>
 
-                </a>
+                        <p class="font-semibold">
+                            Guest
+                        </p>
+
+                        <p class="text-xs text-slate-500">
+                            Traveler
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 
-        </section>
 
-    </main>
 
-    <!-- =========================
+            <!-- TESTIMONIAL 2 -->
+
+            <div class="reveal bg-[#103537] border border-white/10 rounded-3xl p-7">
+
+                <div class="text-amber-300">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p class="text-slate-300 mt-5 leading-relaxed">
+
+                    "CoastLink made planning our coastal trip
+                    much easier. Everything felt simple and organized."
+
+                </p>
+
+                <div class="flex items-center gap-3 mt-6">
+
+                    <div class="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center">
+                        J
+                    </div>
+
+                    <div>
+
+                        <p class="font-semibold">
+                            Guest
+                        </p>
+
+                        <p class="text-xs text-slate-500">
+                            Traveler
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TESTIMONIAL 3 -->
+
+            <div class="slide-right bg-[#103537] border border-white/10 rounded-3xl p-7">
+
+                <div class="text-amber-300">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p class="text-slate-300 mt-5 leading-relaxed">
+
+                    "Beautiful experience and very helpful team.
+                    We would definitely use CoastLink again."
+
+                </p>
+
+                <div class="flex items-center gap-3 mt-6">
+
+                    <div class="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center">
+                        M
+                    </div>
+
+                    <div>
+
+                        <p class="font-semibold">
+                            Guest
+                        </p>
+
+                        <p class="text-xs text-slate-500">
+                            Traveler
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     LOCATION + MAP
+========================== -->
+
+<section class="max-w-6xl mx-auto px-5 py-20">
+
+    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+
+
+        <!-- LOCATION INFO -->
+
+        <div class="slide-left bg-[#103c3d] rounded-[2rem] border border-white/10 p-8 md:p-10">
+
+            <p class="text-teal-300 font-semibold text-sm uppercase tracking-wider">
+                Find us
+            </p>
+
+            <h2 class="text-3xl font-bold mt-3">
+                Visit the Kenyan Coast
+            </h2>
+
+            <p class="text-slate-400 mt-4 leading-relaxed">
+
+                We're based in Watamu, Kilifi County, Kenya,
+                and serve travelers exploring destinations along
+                the beautiful Kenyan coast.
+
+            </p>
+
+
+            <div class="mt-8 space-y-5">
+
+                <div class="flex gap-4">
+
+                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+
+                        <p class="font-semibold">
+                            Location
+                        </p>
+
+                        <p class="text-sm text-slate-400 mt-1">
+                            Watamu, Kilifi County, Kenya
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="flex gap-4">
+
+                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-umbrella-beach"></i>
+                    </div>
+
+                    <div>
+
+                        <p class="font-semibold">
+                            Service area
+                        </p>
+
+                        <p class="text-sm text-slate-400 mt-1">
+                            Mombasa • Malindi • Watamu • Kilifi
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Watamu,Kenya"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block mt-8 bg-teal-500 hover:bg-teal-400 text-white px-6 py-3 rounded-xl font-bold transition">
+
+                Open in Google Maps →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ACTIVE MAP -->
+
+        <div class="slide-right rounded-[2rem] overflow-hidden border border-white/10 min-h-[350px] bg-[#0b292b]">
+
+            <iframe
+                src="https://www.google.com/maps?q=Watamu,Kenya&output=embed"
+                width="100%"
+                height="100%"
+                style="border:0; min-height:350px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SOCIAL MEDIA
+========================== -->
+
+<section class="bg-[#0c3032] border-y border-white/5">
+
+    <div class="max-w-6xl mx-auto px-5 py-20">
+
+        <div class="text-center reveal">
+
+            <p class="text-teal-300 text-sm font-semibold uppercase tracking-wider">
+                Follow the journey
+            </p>
+
+            <h2 class="text-3xl md:text-4xl font-bold mt-2">
+                Connect with CoastLink
+            </h2>
+
+            <p class="text-slate-400 mt-3">
+                Follow us for coastal destinations, travel ideas and updates.
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+
+
+            <!-- INSTAGRAM -->
+
+           <a
+    id="instagramLink"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-card bg-gradient-to-br from-pink-500/20 to-purple-500/20 border border-white/10 rounded-3xl p-6 text-center">
+
+                <div class="text-4xl">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <h3 class="font-bold mt-4">
+                    Instagram
+                </h3>
+
+                <p class="text-xs text-slate-400 mt-1">
+                    @coastlinktravel
+                </p>
+
+            </a>
+
+
+
+            <!-- FACEBOOK -->
+
+           <a
+    id="facebookLink"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-card bg-blue-500/10 border border-white/10 rounded-3xl p-6 text-center">
+
+                <div class="text-4xl">
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+
+                <h3 class="font-bold mt-4">
+                    Facebook
+                </h3>
+
+                <p class="text-xs text-slate-400 mt-1">
+                    CoastLink Travel
+                </p>
+
+            </a>
+
+
+
+            <!-- TIKTOK -->
+
+           <a
+    id="tiktokLink"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-card bg-white/5 border border-white/10 rounded-3xl p-6 text-center">
+
+                <div class="text-4xl">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+
+                <h3 class="font-bold mt-4">
+                    TikTok
+                </h3>
+
+                <p class="text-xs text-slate-400 mt-1">
+                    @coastlinktravel
+                </p>
+
+            </a>
+
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                id="socialWhatsapp"
+                href="#"
+                class="social-card bg-green-500/10 border border-white/10 rounded-3xl p-6 text-center">
+
+                <div class="text-4xl">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+
+                <h3 class="font-bold mt-4">
+                    WhatsApp
+                </h3>
+
+                <p class="text-xs text-slate-400 mt-1">
+                    Chat with us
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     QUICK CTA
+========================== -->
+
+<section class="px-5 py-20">
+
+    <div class="max-w-5xl mx-auto relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-teal-600 to-[#0b3638] p-8 md:p-14 text-center shadow-2xl">
+
+        <div class="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
+
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-black/20 rounded-full blur-2xl"></div>
+
+
+        <div class="relative z-10">
+
+            <div class="text-4xl">
+                 <i class="fa-solid fa-umbrella-beach"></i>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-bold mt-4">
+                Ready to explore the coast?
+            </h2>
+
+            <p class="text-teal-100 mt-3 max-w-xl mx-auto">
+                Tell us where you're going and we'll help you plan your journey.
+            </p>
+
+            <a
+                id="homeWhatsApp"
+                href="#"
+                class="inline-block mt-7 bg-white text-teal-700 px-7 py-4 rounded-2xl font-bold hover:bg-teal-50 transition">
+
+                <i class="fa-brands fa-whatsapp"></i> Start WhatsApp Chat
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================
      EXPLORE MENU
 ========================== -->
 
 <div
     id="exploreMenu"
-    class="hidden fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm">
+    class="hidden fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm">
 
-    <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-[2rem] p-6">
+    <div class="absolute bottom-0 left-0 right-0 bg-[#0c3032] text-white rounded-t-[2rem] p-6 border-t border-white/10">
 
         <div class="flex items-center justify-between mb-6">
 
             <div>
 
-                <p class="text-teal-600 text-sm font-semibold">
+                <p class="text-teal-300 text-sm font-semibold">
                     EXPLORE
                 </p>
 
@@ -266,9 +980,9 @@
 
             <button
                 id="closeExplore"
-                class="w-10 h-10 bg-slate-100 rounded-xl">
+                class="w-10 h-10 bg-white/10 rounded-xl">
 
-                ✕
+                <i class="fa-solid fa-circle-xmark"></i>
 
             </button>
 
@@ -277,77 +991,72 @@
 
         <div class="grid grid-cols-2 gap-3">
 
-
-            <a
-                href="transfers.html"
-                class="bg-slate-50 rounded-2xl p-5">
+            <a href="transfers.html"
+               class="bg-white/5 rounded-2xl p-5 border border-white/5">
 
                 <div class="text-3xl">
-                    🚐
+                    <i class="fa-solid fa-car"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
                     Transfers
                 </h3>
 
-                <p class="text-xs text-slate-500 mt-1">
+                <p class="text-xs text-slate-400 mt-1">
                     Travel around the coast
                 </p>
 
             </a>
 
 
-            <a
-                href="accommodation.html"
-                class="bg-slate-50 rounded-2xl p-5">
+            <a href="accommodation.html"
+               class="bg-white/5 rounded-2xl p-5 border border-white/5">
 
                 <div class="text-3xl">
-                    🏨
+                    <i class="fa-solid fa-building"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
                     Accommodation
                 </h3>
 
-                <p class="text-xs text-slate-500 mt-1">
+                <p class="text-xs text-slate-400 mt-1">
                     Find somewhere to stay
                 </p>
 
             </a>
 
 
-            <a
-                href="excursions.html"
-                class="bg-slate-50 rounded-2xl p-5">
+            <a href="excursions.html"
+               class="bg-white/5 rounded-2xl p-5 border border-white/5">
 
                 <div class="text-3xl">
-                    🌴
+                    <i class="fa-solid fa-compass"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
                     Excursions
                 </h3>
 
-                <p class="text-xs text-slate-500 mt-1">
+                <p class="text-xs text-slate-400 mt-1">
                     Discover experiences
                 </p>
 
             </a>
 
 
-            <a
-                href="about.html"
-                class="bg-slate-50 rounded-2xl p-5">
+            <a href="about.html"
+               class="bg-white/5 rounded-2xl p-5 border border-white/5">
 
                 <div class="text-3xl">
-                    ℹ️
+                    <i class="fa-solid fa-circle-info"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
                     About Us
                 </h3>
 
-                <p class="text-xs text-slate-500 mt-1">
+                <p class="text-xs text-slate-400 mt-1">
                     Learn about us
                 </p>
 
@@ -358,9 +1067,9 @@
 
         <a
             href="contact.html"
-            class="block text-center mt-4 bg-teal-600 text-white py-4 rounded-2xl font-bold">
+            class="block text-center mt-4 bg-teal-500 text-white py-4 rounded-2xl font-bold">
 
-            📞 Contact CoastLink
+            <i class="fa-solid fa-phone-flip"></i> Contact CoastLink
 
         </a>
 
@@ -369,84 +1078,256 @@
 </div>
 
 
-    <!-- MOBILE NAVIGATION -->
 
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200">
+<!-- =========================
+     MOBILE NAVIGATION
+========================== -->
 
-        <div class="grid grid-cols-3 text-center">
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#071f21]/95 backdrop-blur-xl border-t border-white/10">
 
-            <a href="index.html" class="py-3 text-slate-500">
+    <div class="grid grid-cols-3 text-center">
 
-                <div class="text-xl">🏠</div>
+        <a
+            href="index.html"
+            class="py-3 text-slate-400">
 
-                <span class="text-xs">Home</span>
+            <div class="text-xl">
+                 <i class="fa-solid fa-house"></i>
+            </div>
 
-            </a>
+            <span class="text-xs">
+                Home
+            </span>
+
+        </a>
 
 
-            <button
-    id="exploreButton"
-    class="py-3 text-slate-500 w-full">
+        <button
+            id="exploreButton"
+            class="py-3 text-slate-400 w-full">
 
-    <div class="text-xl">
-        🧭
+            <div class="text-xl">
+                <i class="fa-solid fa-cloud"></i>
+            </div>
+
+            <span class="text-xs">
+                Explore
+            </span>
+
+        </button>
+
+
+        <a
+            href="contact.html"
+            class="py-3 text-teal-400">
+
+            <div class="text-xl">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+
+            <span class="text-xs">
+                Contact
+            </span>
+
+        </a>
+
     </div>
 
-    <span class="text-xs">
-        Explore
-    </span>
-
-</button>
+</nav>
 
 
-            <a href="contact.html" class="py-3 text-teal-600">
 
-                <div class="text-xl">☎️</div>
-
-                <span class="text-xs">Contact</span>
-
-            </a>
-
-        </div>
-
-    </nav>
+<!-- =========================
+     SCRIPTS
+========================== -->
 
 <script src="js/config.js"></script>
 <script src="js/navigation.js"></script>
 
-    <script>
 
-        if ("serviceWorker" in navigator) {
 
-            window.addEventListener("load", () => {
+<script>
 
-                navigator.serviceWorker.register("./service-worker.js");
 
-            });
+/* =========================
+   SOCIAL MEDIA
+========================== */
 
-        }
+document.getElementById("instagramLink").href =
+    SITE_CONFIG.social.instagram;
 
-    </script>
+document.getElementById("facebookLink").href =
+    SITE_CONFIG.social.facebook;
 
-    <script>
+document.getElementById("tiktokLink").href =
+    SITE_CONFIG.social.tiktok;
 
-    document.getElementById("phoneLink").href =
-        "tel:" + SITE_CONFIG.phone;
+
+    /* =========================
+       SITE CONTACT DETAILS
+    ========================== */
+
+    const whatsappNumber =
+        SITE_CONFIG.whatsapp.bookings;
+
+
+
+const bookingPhone =
+    SITE_CONFIG.phones.bookings;
+
+const supportPhone =
+    SITE_CONFIG.phones.support;
+
+
+/* BOOKINGS PHONE */
+
+document.getElementById("bookingPhoneLink").href =
+    "tel:" + bookingPhone;
+
+document.getElementById("bookingPhoneNumber").textContent =
+    bookingPhone;
+
+
+/* SUPPORT PHONE */
+
+document.getElementById("supportPhoneLink").href =
+    "tel:" + supportPhone;
+
+document.getElementById("supportPhoneNumber").textContent =
+    supportPhone;
+
+
+
+
+
+
+
+
+
+
+
+    /*const bookingPhone =
+        SITE_CONFIG.phones.bookings;*/
+
+
+    /* PHONE */
+
+    /*document.getElementById("phoneLink").href =
+        "tel:" + bookingPhone;
 
     document.getElementById("phoneNumber").textContent =
-        SITE_CONFIG.phone;
+        bookingPhone; */
 
+
+    /* WHATSAPP */
 
     document.getElementById("whatsappLink").href =
-        "https://wa.me/" + SITE_CONFIG.whatsapp;
+        "https://wa.me/" + whatsappNumber;
 
+    document.getElementById("socialWhatsapp").href =
+        "https://wa.me/" + whatsappNumber;
+
+    document.getElementById("whatsappNumber").textContent =
+        bookingPhone;
+
+
+    /* EMAIL */
 
     document.getElementById("emailLink").href =
         "mailto:" + SITE_CONFIG.email;
 
+    document.getElementById("emailAddress").textContent =
+        SITE_CONFIG.email;
+
+
+
+    /* =========================
+       WHATSAPP CTA
+    ========================== */
+
+    const message =
+        "Hello CoastLink Travel, I would like help planning my trip.";
+
+    document.getElementById("homeWhatsApp").href =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+
+    /* =========================
+       SCROLL REVEAL ANIMATIONS
+    ========================== */
+
+    const animatedElements =
+        document.querySelectorAll(
+            ".reveal, .slide-left, .slide-right"
+        );
+
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    animatedElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+
+    /* =========================
+       SERVICE WORKER
+    ========================== */
+
+    if ("serviceWorker" in navigator) {
+
+        window.addEventListener("load", () => {
+
+            navigator.serviceWorker.register("./service-worker.js")
+                .then(() => {
+
+                    console.log(
+                        "CoastLink Travel service worker registered."
+                    );
+
+                })
+                .catch(error => {
+
+                    console.error(
+                        "Service worker registration failed:",
+                        error
+                    );
+
+                });
+
+        });
+
+    }
 
 </script>
 
-</body>
 
+</body>
 </html>

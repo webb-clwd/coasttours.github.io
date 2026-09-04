@@ -4,20 +4,26 @@ const SITE_CONFIG = {
 
     tagline: "Discover the Kenyan Coast",
 
-    phone: "+254700000000",
+    phones: {
+        bookings: "+254740374925",
+        support: "+254723237633"
+    },
 
-    whatsapp: "254700000000",
+    whatsapp: {
+        bookings: "254740374925",
+        support: "254723237633"
+    },
 
     email: "hello@coastlinktravel.com",
 
-    location: "Malindi, Kilifi County, Kenya",
+    location: "Watamu, Kilifi County, Kenya",
 
     website: "",
 
     social: {
-        facebook: "",
-        instagram: "",
-        tiktok: ""
+        /*facebook: "https://www.facebook.com/YOUR_PAGE",
+        instagram: "https://www.instagram.com/YOUR_USERNAME",
+        tiktok: "https://www.tiktok.com/@YOUR_USERNAME"*/
     }
 
 };

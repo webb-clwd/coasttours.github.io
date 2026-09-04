@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,272 +10,939 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <meta name="theme-color" content="#0f766e">
+     <!--   font icon-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <meta name="theme-color" content="#071f21">
     <link rel="manifest" href="manifest.json">
+
+    <style>
+
+        /* =========================
+           SCROLL ANIMATIONS
+        ========================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-70px);
+            transition:
+                opacity 0.9s ease,
+                transform 0.9s ease;
+        }
+
+        .slide-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+        .slide-right {
+            opacity: 0;
+            transform: translateX(70px);
+            transition:
+                opacity 0.9s ease,
+                transform 0.9s ease;
+        }
+
+        .slide-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+        /* =========================
+           HERO ANIMATION
+        ========================== */
+
+        .hero-image {
+            animation: heroZoom 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.08);
+            }
+
+        }
+
+
+        /* =========================
+           FLOATING EFFECT
+        ========================== */
+
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+        }
+
+
+        /* =========================
+           CARD HOVER
+        ========================== */
+
+        .feature-card {
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(45, 212, 191, 0.4);
+            background: #124749;
+        }
+
+
+        /* =========================
+           GRADIENT TEXT
+        ========================== */
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                #5eead4,
+                #2dd4bf,
+                #fbbf24
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+
+        /* =========================
+           REDUCED MOTION
+        ========================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal,
+            .slide-left,
+            .slide-right {
+
+                opacity: 1;
+                transform: none;
+                transition: none;
+
+            }
+
+            .hero-image,
+            .float {
+
+                animation: none;
+
+            }
+
+        }
+
+    </style>
+
 </head>
 
-<body class="bg-slate-50 text-slate-900 pb-24">
 
-    <!-- HEADER -->
+<body class="bg-[#071f21] text-white pb-24">
 
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
 
-        <div class="max-w-6xl mx-auto px-5 py-4 flex items-center gap-4">
+<!-- =========================
+     HEADER
+========================== -->
 
-            <a href="index.html"
-               class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center">
-                ←
-            </a>
+<header
+    class="sticky top-0 z-40 bg-[#071f21]/95 backdrop-blur-xl border-b border-white/10">
 
-            <div>
-                <h1 class="font-bold text-lg">About Us</h1>
+    <div
+        class="max-w-6xl mx-auto px-4 sm:px-5 py-4 flex items-center gap-3">
 
-                <p class="text-xs text-slate-500">
-                    Get to know CoastLink Travel
+        <a
+            href="index.html"
+            aria-label="Back to home"
+            class="w-10 h-10 flex-shrink-0 rounded-xl bg-white/10 flex items-center justify-center hover:bg-teal-600 transition">
+
+            ←
+
+        </a>
+
+
+        <!--div class="min-w-0">
+
+            <h1 class="font-bold text-lg truncate">
+                About Us
+            </h1>
+
+            <p class="text-xs text-slate-400 truncate">
+                Get to know CoastLink Travel
+            </p>
+
+        </div>-->
+
+
+        <div class="min-w-0 flex-1">
+
+    <h1 class="font-bold text-lg truncate">
+        About Us
+    </h1>
+
+    <p class="text-xs text-slate-400 truncate">
+        Get to know CoastLink Travel
+    </p>
+
+</div>
+
+<!-- TERMS ICON -->
+<button
+    id="termsButton"
+    type="button"
+    aria-label="Terms and Conditions"
+    class="w-10 h-10 flex-shrink-0 rounded-xl bg-white/10
+           flex items-center justify-center
+           text-slate-300 hover:bg-teal-500/20
+           hover:text-teal-300 transition">
+
+    <i class="fa-solid fa-file-contract"></i>
+
+</button>
+
+
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="max-w-6xl mx-auto px-4 sm:px-5 pt-6 sm:pt-8">
+
+    <div
+        class="relative rounded-[2rem] overflow-hidden h-[430px] sm:h-[500px]">
+
+        <!-- IMAGE -->
+
+        <img
+            src="img/abt1.jpg"
+            alt="Kenyan coast"
+            class="hero-image absolute inset-0 w-full h-full object-cover">
+
+
+        <!-- DARK OVERLAY -->
+
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-[#06191b] via-[#06191b]/60 to-black/20">
+        </div>
+
+
+        <!-- GLOW -->
+
+        <div
+            class="absolute -top-20 -right-20 w-72 h-72 bg-teal-400/20 blur-3xl rounded-full">
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div
+            class="relative z-10 h-full flex items-end p-6 sm:p-10 md:p-14">
+
+            <div class="max-w-3xl reveal">
+
+                <div class="text-5xl sm:text-6xl float mb-5">
+                    <i class="fa-solid fa-person-swimming"></i>
+                </div>
+
+                <p
+                    class="text-teal-300 uppercase tracking-[0.2em] text-xs sm:text-sm font-semibold">
+
+                    CoastLink Travel
+
                 </p>
+
+
+                <h2
+                    class="text-4xl sm:text-5xl md:text-6xl font-bold mt-3 leading-tight">
+
+                    Your journey.
+                    <br>
+
+                    <span class="gradient-text">
+                        Our experience.
+                    </span>
+
+                </h2>
+
+
+                <p
+                    class="text-slate-300 mt-5 max-w-xl leading-relaxed">
+
+                    Connecting travelers with the beauty,
+                    culture and experiences of the Kenyan coast.
+
+                </p>
+
             </div>
 
         </div>
 
-    </header>
+    </div>
+
+</section>
 
 
-    <main>
 
-        <!-- HERO -->
+<!-- =========================
+     WHO WE ARE
+========================== -->
 
-        <section class="max-w-6xl mx-auto px-5 pt-8">
+<section class="max-w-6xl mx-auto px-5 py-20">
 
-            <div class="relative rounded-[2rem] overflow-hidden h-[420px]">
+    <div
+        class="grid lg:grid-cols-2 gap-12 items-center">
+
+
+        <!-- IMAGE -->
+
+        <div class="slide-left">
+
+            <div class="relative">
 
                 <img
-                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85"
-                    alt="Kenyan coast"
-                    class="absolute inset-0 w-full h-full object-cover">
+                    src="img/abt2.jpg"
+                    alt="Travel experience"
+                    class="w-full h-[380px] object-cover rounded-[2rem]">
 
-                <div class="absolute inset-0 bg-black/45"></div>
 
-                <div class="relative z-10 h-full flex items-end p-7 md:p-10 text-white">
+                <div
+                    class="absolute -bottom-5 -right-4 sm:-right-5 bg-teal-500 rounded-2xl p-5 shadow-xl">
 
-                    <div>
+                    <p class="text-2xl font-bold">
+                        Coast
+                    </p>
 
-                        <p class="text-teal-200 uppercase tracking-wider text-sm font-semibold">
-                            CoastLink Travel
-                        </p>
-
-                        <h2 class="text-4xl md:text-6xl font-bold mt-2">
-                            Your journey.
-                            <br>
-                            Our experience.
-                        </h2>
-
-                    </div>
+                    <p class="text-xs text-teal-100">
+                        Discover differently
+                    </p>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
 
-        <!-- ABOUT -->
+        <!-- TEXT -->
 
-        <section class="max-w-4xl mx-auto px-5 py-14">
+        <div class="slide-right">
 
-            <p class="text-teal-600 font-semibold text-sm uppercase tracking-wider">
+            <p
+                class="text-teal-300 font-semibold text-sm uppercase tracking-wider">
+
                 Who we are
+
             </p>
 
-            <h2 class="text-3xl md:text-4xl font-bold mt-2">
-                Discover the Kenyan coast with confidence.
+
+            <h2
+                class="text-3xl md:text-4xl font-bold mt-3 leading-tight">
+
+                Discover the Kenyan coast
+                <span class="text-teal-400">
+                    with confidence.
+                </span>
+
             </h2>
 
-            <div class="space-y-5 text-slate-600 mt-6 leading-relaxed">
+
+            <div
+                class="space-y-5 text-slate-400 mt-6 leading-relaxed">
 
                 <p>
-                    CoastLink Travel is a coastal travel company helping
-                    visitors discover some of the most beautiful destinations
-                    along the Kenyan coast.
+
+                    CoastLink Travel is a coastal travel company
+                    helping visitors discover some of the most
+                    beautiful destinations along the Kenyan coast.
+
                 </p>
 
-                <p>
-                    From comfortable transfers and coastal accommodation
-                    to unforgettable excursions, our goal is to make
-                    travelling easier, more comfortable and more enjoyable.
-                </p>
 
                 <p>
-                    Whether you're visiting Mombasa, Malindi, Watamu,
-                    Kilifi or other coastal destinations, our team is
-                    ready to help you plan your journey.
+
+                    From comfortable transfers and coastal
+                    accommodation to unforgettable excursions,
+                    our goal is to make travelling easier,
+                    more comfortable and more enjoyable.
+
+                </p>
+
+
+                <p>
+
+                    Whether you're visiting Mombasa, Malindi,
+                    Watamu, Kilifi or other coastal destinations,
+                    we're here to help you plan your journey.
+
                 </p>
 
             </div>
 
-        </section>
 
+            <!-- STATS -->
 
-        <!-- WHY US -->
+            <div class="grid grid-cols-2 gap-4 mt-8">
 
-        <section class="bg-white border-y border-slate-200">
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl p-5">
 
-            <div class="max-w-6xl mx-auto px-5 py-14">
-
-                <div class="text-center mb-10">
-
-                    <p class="text-teal-600 font-semibold text-sm uppercase">
-                        Why CoastLink
+                    <p class="text-3xl font-bold text-teal-300">
+                        4+
                     </p>
 
-                    <h2 class="text-3xl font-bold mt-2">
-                        Travel with confidence
+                    <p class="text-sm text-slate-400 mt-1">
+                        Coastal destinations
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl p-5">
+
+                    <p class="text-3xl font-bold text-amber-300">
+                        24/7
+                    </p>
+
+                    <p class="text-sm text-slate-400 mt-1">
+                        Enquiry support
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     WHY COASTLINK
+========================== -->
+
+<section
+    class="bg-[#0c3032] border-y border-white/5">
+
+    <div class="max-w-6xl mx-auto px-5 py-20">
+
+
+        <div class="text-center reveal">
+
+            <p
+                class="text-teal-300 font-semibold text-sm uppercase tracking-wider">
+
+                Why CoastLink
+
+            </p>
+
+
+            <h2
+                class="text-3xl md:text-4xl font-bold mt-3">
+
+                Travel with confidence
+
+            </h2>
+
+
+            <p
+                class="text-slate-400 max-w-xl mx-auto mt-4">
+
+                We focus on making every part of your
+                coastal journey easier.
+
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="grid md:grid-cols-3 gap-5 mt-12">
+
+
+            <!-- CARD 1 -->
+
+            <div
+                class="feature-card slide-left bg-[#103c3d] border border-white/10 rounded-3xl p-7">
+
+                <div
+                    class="w-14 h-14 rounded-2xl bg-teal-500/15 flex items-center justify-center text-3xl">
+
+                    <i class="fa-solid fa-van-shuttle"></i>
+
+                </div>
+
+
+                <h3
+                    class="font-bold text-xl mt-5">
+
+                    Reliable Transfers
+
+                </h3>
+
+
+                <p
+                    class="text-slate-400 mt-3 leading-relaxed">
+
+                    Comfortable transportation designed
+                    to make getting around the coast simple.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div
+                class="feature-card reveal bg-[#103c3d] border border-white/10 rounded-3xl p-7">
+
+                <div
+                    class="w-14 h-14 rounded-2xl bg-amber-400/10 flex items-center justify-center text-3xl">
+
+                    <i class="fa-solid fa-person-swimming"></i>
+
+                </div>
+
+
+                <h3
+                    class="font-bold text-xl mt-5">
+
+                    Local Experiences
+
+                </h3>
+
+
+                <p
+                    class="text-slate-400 mt-3 leading-relaxed">
+
+                    Discover destinations, activities and
+                    experiences that make the Kenyan coast special.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div
+                class="feature-card slide-right bg-[#103c3d] border border-white/10 rounded-3xl p-7">
+
+                <div
+                    class="w-14 h-14 rounded-2xl bg-blue-400/10 flex items-center justify-center text-3xl">
+
+                    <i class="fa-solid fa-person-circle-question"></i>
+
+                </div>
+
+
+                <h3
+                    class="font-bold text-xl mt-5">
+
+                    Personal Assistance
+
+                </h3>
+
+
+                <p
+                    class="text-slate-400 mt-3 leading-relaxed">
+
+                    Speak directly with our team when you
+                    need help planning your coastal adventure.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     OUR APPROACH
+========================== -->
+
+<section class="max-w-6xl mx-auto px-5 py-20">
+
+    <div
+        class="grid lg:grid-cols-3 gap-5">
+
+
+        <!-- INTRO -->
+
+        <div
+            class="lg:col-span-1 slide-left">
+
+            <p
+                class="text-teal-300 font-semibold text-sm uppercase tracking-wider">
+
+                Our approach
+
+            </p>
+
+
+            <h2
+                class="text-3xl font-bold mt-3">
+
+                Simple travel.
+                <br>
+
+                Better experiences.
+
+            </h2>
+
+
+            <p
+                class="text-slate-400 mt-5 leading-relaxed">
+
+                We believe planning your coastal trip
+                shouldn't be complicated.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- STEP 1 -->
+
+        <div
+            class="reveal bg-[#103537] border border-white/10 rounded-3xl p-7">
+
+            <div
+                class="text-teal-300 text-sm font-bold">
+
+                01
+
+            </div>
+
+
+            <div class="text-3xl mt-6">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+
+            <h3
+                class="text-xl font-bold mt-5">
+
+                Tell us where
+
+            </h3>
+
+
+            <p
+                class="text-slate-400 mt-3 leading-relaxed">
+
+                Let us know your destination,
+                travel dates and what you're looking for.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- STEP 2 -->
+
+        <div
+            class="reveal bg-[#103537] border border-white/10 rounded-3xl p-7">
+
+            <div
+                class="text-teal-300 text-sm font-bold">
+
+                02
+
+            </div>
+
+
+            <div class="text-3xl mt-6">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+
+
+            <h3
+                class="text-xl font-bold mt-5">
+
+                We help you plan
+
+            </h3>
+
+
+            <p
+                class="text-slate-400 mt-3 leading-relaxed">
+
+                Our team helps you explore suitable
+                transfers, accommodation and experiences.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MISSION
+========================== -->
+
+<section class="px-5 pb-20">
+
+    <div
+        class="max-w-6xl mx-auto relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#0d5557] via-[#0b3b3d] to-[#071f21] border border-white/10">
+
+
+        <!-- GLOW -->
+
+        <div
+            class="absolute -top-24 -right-24 w-80 h-80 bg-teal-400/20 blur-3xl rounded-full">
+        </div>
+
+
+        <div
+            class="absolute -bottom-24 -left-24 w-80 h-80 bg-amber-400/10 blur-3xl rounded-full">
+        </div>
+
+
+        <div
+            class="relative z-10 p-8 sm:p-10 md:p-14 reveal">
+
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+
+
+                <div>
+
+                    <p
+                        class="text-teal-200 font-semibold uppercase text-sm tracking-wider">
+
+                        Our mission
+
+                    </p>
+
+
+                    <h2
+                        class="text-3xl md:text-4xl font-bold mt-4 leading-tight">
+
+                        Make exploring the Kenyan coast
+
+                        <span class="text-teal-300">
+                            simple, comfortable and memorable.
+                        </span>
+
                     </h2>
 
                 </div>
 
 
-                <div class="grid md:grid-cols-3 gap-5">
+                <div>
 
-                    <div class="bg-slate-50 rounded-3xl p-7">
+                    <p
+                        class="text-slate-300 leading-relaxed">
 
-                        <div class="text-4xl">🚐</div>
+                        We believe your holiday should be about
+                        enjoying the destination, not worrying
+                        about transportation, accommodation
+                        or finding things to do.
 
-                        <h3 class="font-bold text-xl mt-4">
-                            Reliable Transfers
-                        </h3>
-
-                        <p class="text-slate-500 mt-2">
-                            Comfortable transportation for your
-                            coastal journey.
-                        </p>
-
-                    </div>
+                    </p>
 
 
-                    <div class="bg-slate-50 rounded-3xl p-7">
+                    <a
+                        href="contact.html"
+                        class="inline-flex items-center gap-2 mt-7 bg-white text-teal-800 px-6 py-3 rounded-xl font-bold hover:bg-teal-50 transition">
 
-                        <div class="text-4xl">🌴</div>
+                        Start Planning
 
-                        <h3 class="font-bold text-xl mt-4">
-                            Local Experiences
-                        </h3>
+                        <span>
+                            →
+                        </span>
 
-                        <p class="text-slate-500 mt-2">
-                            Discover memorable experiences and
-                            destinations along the coast.
-                        </p>
-
-                    </div>
-
-
-                    <div class="bg-slate-50 rounded-3xl p-7">
-
-                        <div class="text-4xl">💬</div>
-
-                        <h3 class="font-bold text-xl mt-4">
-                            Personal Assistance
-                        </h3>
-
-                        <p class="text-slate-500 mt-2">
-                            Talk directly to our team whenever
-                            you need help planning your trip.
-                        </p>
-
-                    </div>
+                    </a>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </div>
+
+</section>
 
 
-        <!-- MISSION -->
 
-        <section class="max-w-6xl mx-auto px-5 py-14">
+<!-- =========================
+     FINAL CTA
+========================== -->
 
-            <div class="bg-teal-700 rounded-[2rem] p-8 md:p-14 text-white">
+<section class="px-5 pb-20">
 
-                <p class="text-teal-200 font-semibold uppercase text-sm">
-                    Our mission
-                </p>
+    <div
+        class="max-w-4xl mx-auto text-center reveal">
 
-                <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-3xl">
-                    Make exploring the Kenyan coast simple,
-                    comfortable and memorable.
-                </h2>
 
-                <p class="text-teal-100 mt-5 max-w-2xl leading-relaxed">
-                    We believe your holiday should be about enjoying
-                    the destination, not worrying about transportation,
-                    accommodation or finding things to do.
-                </p>
+        <div class="text-4xl">
+            <i class="fa-solid fa-person-swimming"></i>
+        </div>
 
-                <a
-                    href="contact.html"
-                    class="inline-block mt-7 bg-white text-teal-700 px-6 py-3 rounded-xl font-bold">
 
-                    Start Planning
+        <h2
+            class="text-3xl md:text-4xl font-bold mt-4">
 
-                </a>
+            Your coastal adventure
+            starts here.
 
-            </div>
+        </h2>
 
-        </section>
 
-    </main>
+        <p
+            class="text-slate-400 mt-4 max-w-xl mx-auto">
 
-    <!-- =========================
+            Whether you're planning a weekend escape
+            or a longer coastal holiday, we're ready to help.
+
+        </p>
+
+
+        <a
+            href="contact.html"
+            class="inline-block mt-7 bg-teal-500 hover:bg-teal-400 text-white px-7 py-4 rounded-2xl font-bold transition">
+
+            Contact CoastLink
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
      EXPLORE MENU
 ========================== -->
 
 <div
     id="exploreMenu"
-    class="hidden fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm">
+    class="hidden fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm">
 
-    <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-[2rem] p-6">
+    <div
+        class="absolute bottom-0 left-0 right-0 bg-[#0c3032] text-white rounded-t-[2rem] p-5 sm:p-6 border-t border-white/10 max-h-[90vh] overflow-y-auto">
 
-        <div class="flex items-center justify-between mb-6">
+
+        <div
+            class="flex items-center justify-between mb-6">
 
             <div>
 
-                <p class="text-teal-600 text-sm font-semibold">
+                <p
+                    class="text-teal-300 text-sm font-semibold">
+
                     EXPLORE
+
                 </p>
 
-                <h2 class="text-2xl font-bold">
+
+                <h2
+                    class="text-xl sm:text-2xl font-bold">
+
                     What are you looking for?
+
                 </h2>
 
             </div>
 
+
             <button
                 id="closeExplore"
-                class="w-10 h-10 bg-slate-100 rounded-xl">
+                aria-label="Close menu"
+                class="w-10 h-10 flex-shrink-0 bg-white/10 rounded-xl hover:bg-white/20">
 
-                ✕
+                <i class="fa-solid fa-circle-xmark"></i>
 
             </button>
 
         </div>
 
 
-        <div class="grid grid-cols-2 gap-3">
+
+        <div
+            class="grid grid-cols-2 gap-3">
 
 
             <a
                 href="transfers.html"
-                class="bg-slate-50 rounded-2xl p-5">
+                class="bg-white/5 rounded-2xl p-4 sm:p-5 border border-white/5 hover:bg-white/10 transition">
 
                 <div class="text-3xl">
-                    🚐
+                    <i class="fa-solid fa-car"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
                     Transfers
                 </h3>
 
-                <p class="text-xs text-slate-500 mt-1">
+                <p class="text-xs text-slate-400 mt-1">
                     Travel around the coast
                 </p>
 
@@ -283,17 +951,17 @@
 
             <a
                 href="accommodation.html"
-                class="bg-slate-50 rounded-2xl p-5">
+                class="bg-white/5 rounded-2xl p-4 sm:p-5 border border-white/5 hover:bg-white/10 transition">
 
                 <div class="text-3xl">
-                    🏨
+                    <i class="fa-solid fa-building"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
                     Accommodation
                 </h3>
 
-                <p class="text-xs text-slate-500 mt-1">
+                <p class="text-xs text-slate-400 mt-1">
                     Find somewhere to stay
                 </p>
 
@@ -302,17 +970,17 @@
 
             <a
                 href="excursions.html"
-                class="bg-slate-50 rounded-2xl p-5">
+                class="bg-white/5 rounded-2xl p-4 sm:p-5 border border-white/5 hover:bg-white/10 transition">
 
                 <div class="text-3xl">
-                    🌴
+                    <i class="fa-solid fa-compass"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
                     Excursions
                 </h3>
 
-                <p class="text-xs text-slate-500 mt-1">
+                <p class="text-xs text-slate-400 mt-1">
                     Discover experiences
                 </p>
 
@@ -321,17 +989,17 @@
 
             <a
                 href="about.html"
-                class="bg-slate-50 rounded-2xl p-5">
+                class="bg-teal-500/20 rounded-2xl p-4 sm:p-5 border border-teal-400/20">
 
                 <div class="text-3xl">
-                    ℹ️
+                    <i class="fa-solid fa-circle-info"></i>
                 </div>
 
                 <h3 class="font-bold mt-3">
                     About Us
                 </h3>
 
-                <p class="text-xs text-slate-500 mt-1">
+                <p class="text-xs text-slate-400 mt-1">
                     Learn about us
                 </p>
 
@@ -342,9 +1010,9 @@
 
         <a
             href="contact.html"
-            class="block text-center mt-4 bg-teal-600 text-white py-4 rounded-2xl font-bold">
+            class="block text-center mt-4 bg-teal-500 hover:bg-teal-400 text-white py-4 rounded-2xl font-bold transition">
 
-            📞 Contact CoastLink
+            Contact CoastLink
 
         </a>
 
@@ -353,65 +1021,482 @@
 </div>
 
 
-    <!-- MOBILE NAVIGATION -->
 
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200">
+<!-- =========================
+     MOBILE NAVIGATION
+========================== -->
 
-        <div class="grid grid-cols-3 text-center">
+<nav
+    class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#071f21]/95 backdrop-blur-xl border-t border-white/10">
 
-            <a href="index.html" class="py-3 text-slate-500">
-
-                <div class="text-xl">🏠</div>
-
-                <span class="text-xs">Home</span>
-
-            </a>
+    <div
+        class="grid grid-cols-3 h-[68px]">
 
 
-            <button
-    id="exploreButton"
-    class="py-3 text-slate-500 w-full">
+        <!-- HOME -->
 
-    <div class="text-xl">
-        🧭
+        <a
+            href="index.html"
+            class="flex flex-col items-center justify-center gap-1 text-slate-400 active:text-teal-300">
+
+            <span class="text-lg leading-none">
+                <i class="fa-solid fa-house"></i>
+            </span>
+
+            <span class="text-[11px] font-medium">
+                Home
+            </span>
+
+        </a>
+
+
+        <!-- EXPLORE -->
+
+        <button
+            id="exploreButton"
+            type="button"
+            class="flex flex-col items-center justify-center gap-1 text-slate-400 active:text-teal-300 w-full">
+
+            <span class="text-lg leading-none">
+                 <i class="fa-solid fa-cloud"></i>
+            </span>
+
+            <span class="text-[11px] font-medium">
+                Explore
+            </span>
+
+        </button>
+
+
+        <!-- CONTACT -->
+
+        <a
+            href="contact.html"
+            class="flex flex-col items-center justify-center gap-1 text-teal-400">
+
+            <span class="text-lg leading-none">
+                <i class="fa-solid fa-phone"></i>
+            </span>
+
+            <span class="text-[11px] font-medium">
+                Contact
+            </span>
+
+        </a>
+
     </div>
 
-    <span class="text-xs">
-        Explore
-    </span>
+</nav>
 
-</button>
+    <!-- =========================
+     TERMS & CONDITIONS SHEET
+========================== -->
 
-            <a href="contact.html" class="py-3 text-teal-600">
+<div
+    id="termsSheet"
+    class="fixed inset-0 z-[100] hidden">
 
-                <div class="text-xl">☎️</div>
+    <!-- BACKDROP -->
 
-                <span class="text-xs">Contact</span>
+    <div
+        id="termsBackdrop"
+        class="absolute inset-0 bg-black/70 backdrop-blur-md">
+    </div>
 
-            </a>
+
+    <!-- SHEET -->
+
+    <div
+        id="termsPanel"
+        class="absolute bottom-0 left-0 right-0
+               mx-auto w-full max-w-2xl
+               bg-[#0c3032]
+               border border-white/10
+               rounded-t-[2rem]
+               shadow-2xl
+               transform translate-y-full
+               transition-transform duration-300 ease-out
+               max-h-[85vh]
+               flex flex-col">
+
+        <!-- TOP BAR -->
+
+        <div
+            class="flex items-center justify-between
+                   px-5 py-4
+                   border-b border-white/10
+                   flex-shrink-0">
+
+            <div class="flex items-center gap-3">
+
+                <div
+                    class="w-10 h-10 rounded-xl
+                           bg-teal-500/15
+                           flex items-center justify-center
+                           text-teal-300">
+
+                    <i class="fa-solid fa-file-contract"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 class="font-bold text-lg">
+                        Terms & Conditions
+                    </h2>
+
+                    <p class="text-xs text-slate-400">
+                        CoastLink Travel
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLOSE -->
+
+            <button
+                id="closeTerms"
+                type="button"
+                aria-label="Close Terms and Conditions"
+                class="w-10 h-10 rounded-full
+                       bg-white/10
+                       flex items-center justify-center
+                       text-slate-300
+                       hover:bg-white/20
+                       transition">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
 
         </div>
 
-    </nav>
 
-    <script src="js/config.js"></script>
-    <script src="js/navigation.js"></script>
+        <!-- SCROLLABLE CONTENT -->
+
+        <div
+            class="overflow-y-auto px-5 py-6 space-y-6
+                   overscroll-contain">
+
+            <section>
+
+                <h3 class="font-bold text-teal-300">
+                    1. Bookings
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                    All travel requests are subject to availability
+                    and confirmation by CoastLink Travel.
+                </p>
+
+            </section>
 
 
-    <script>
+            <section>
 
-        if ("serviceWorker" in navigator) {
+                <h3 class="font-bold text-teal-300">
+                    2. Payments
+                </h3>
 
-            window.addEventListener("load", () => {
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                    Payment arrangements and applicable charges
+                    will be communicated before a booking is confirmed.
+                </p>
 
-                navigator.serviceWorker.register("./service-worker.js");
+            </section>
+
+
+            <section>
+
+                <h3 class="font-bold text-teal-300">
+                    3. Cancellations
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                    Cancellation and refund conditions may vary
+                    depending on the service booked and the provider involved.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h3 class="font-bold text-teal-300">
+                    4. Transfers
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                    Customers should provide accurate pickup,
+                    destination and travel information when making
+                    a transfer request.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h3 class="font-bold text-teal-300">
+                    5. Accommodation
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                    Accommodation availability, prices and conditions
+                    are subject to confirmation by the relevant property
+                    or accommodation provider.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h3 class="font-bold text-teal-300">
+                    6. Excursions
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                    Excursions may be affected by weather, safety
+                    conditions or circumstances outside our control.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h3 class="font-bold text-teal-300">
+                    7. Customer Information
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                    Customers are responsible for providing accurate
+                    information necessary to arrange their requested
+                    travel services.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h3 class="font-bold text-teal-300">
+                    8. Third-Party Services
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                    Some services may be provided by independent
+                    accommodation, transport or activity providers.
+                    Their individual terms may also apply.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h3 class="font-bold text-teal-300">
+                    9. Changes
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                    CoastLink Travel may update these terms when
+                    necessary. The latest version displayed on this
+                    website will apply to future enquiries.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h3 class="font-bold text-teal-300">
+                    10. Contact
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                    For questions about these terms or your travel
+                    arrangements, please contact CoastLink Travel
+                    through the contact options provided on the website.
+                </p>
+
+            </section>
+
+
+            <!-- BOTTOM NOTE -->
+
+            <div
+                class="bg-white/5
+                       border border-white/10
+                       rounded-2xl
+                       p-4">
+
+                <div class="flex gap-3">
+
+                    <i class="fa-solid fa-circle-info text-teal-300 mt-1"></i>
+
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        These terms are intended as general website
+                        terms and should be reviewed and adapted to
+                        your actual business policies.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     SCRIPTS
+========================== -->
+
+<script src="js/config.js"></script>
+
+<script src="js/navigation.js"></script>
+
+
+<script>
+
+    /* =========================
+       SCROLL REVEAL
+    ========================== */
+
+    const animatedElements =
+        document.querySelectorAll(
+            ".reveal, .slide-left, .slide-right"
+        );
+
+
+    const observer =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
+
+
+    animatedElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+
+    /* =========================
+       SERVICE WORKER
+    ========================== */
+
+    if ("serviceWorker" in navigator) {
+
+        window.addEventListener("load", () => {
+
+            navigator.serviceWorker.register(
+                "./service-worker.js"
+            )
+            .then(() => {
+
+                console.log(
+                    "CoastLink Travel service worker registered."
+                );
+
+            })
+            .catch(error => {
+
+                console.error(
+                    "Service worker registration failed:",
+                    error
+                );
 
             });
 
-        }
+        });
 
-    </script>
+    }
+
+
+
+    /* =========================
+   TERMS & CONDITIONS
+========================== */
+
+const termsButton = document.getElementById("termsButton");
+const termsSheet = document.getElementById("termsSheet");
+const termsPanel = document.getElementById("termsPanel");
+const closeTerms = document.getElementById("closeTerms");
+const termsBackdrop = document.getElementById("termsBackdrop");
+
+
+function openTerms() {
+
+    termsSheet.classList.remove("hidden");
+
+    document.body.classList.add("overflow-hidden");
+
+    requestAnimationFrame(() => {
+
+        termsPanel.classList.remove("translate-y-full");
+
+    });
+
+}
+
+
+function closeTermsSheet() {
+
+    termsPanel.classList.add("translate-y-full");
+
+    document.body.classList.remove("overflow-hidden");
+
+    setTimeout(() => {
+
+        termsSheet.classList.add("hidden");
+
+    }, 300);
+
+}
+
+
+termsButton.addEventListener("click", openTerms);
+
+closeTerms.addEventListener("click", closeTermsSheet);
+
+termsBackdrop.addEventListener("click", closeTermsSheet);
+
+
+
+
+
+
+</script>
+
 
 </body>
-
 </html>
