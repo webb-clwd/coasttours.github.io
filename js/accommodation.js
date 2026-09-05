@@ -126,8 +126,31 @@ document.addEventListener("DOMContentLoaded", function () {
             const accommodationType =
                 document.getElementById("accommodationType").value;
 
-            const budget =
-                document.getElementById("budget").value;
+            //const budget =
+                //ocument.getElementById("budget").value;
+
+
+                const budgetCurrency =
+    document.getElementById("budgetCurrency").value;
+
+const budgetAmount =
+    document.getElementById("budgetAmount").value;
+
+let budget = "No specific budget";
+
+if (budgetAmount) {
+
+    const numericAmount =
+        Number(budgetAmount);
+
+    if (!isNaN(numericAmount) && numericAmount > 0) {
+
+        budget =
+            `${budgetCurrency} ${numericAmount.toLocaleString()} per night`;
+
+    }
+
+}
 
 
             // =========================
