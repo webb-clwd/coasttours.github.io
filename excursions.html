@@ -131,32 +131,87 @@
 
         <div class="max-w-6xl mx-auto px-5 py-4 flex items-center gap-4">
 
-            <a
-                href="index.html"
-                class="w-10 h-10 rounded-xl bg-white/10 hover:bg-teal-600 flex items-center justify-center transition">
+    <a
+        href="index.html"
+        class="w-10 h-10 rounded-xl bg-white/10 hover:bg-teal-600 flex items-center justify-center transition">
 
-                ←
+        <i class="fa-solid fa-arrow-left"></i>
 
-            </a>
+    </a>
 
+    <div class="flex-1 min-w-0">
 
-            <div>
+        <h1 class="font-bold text-lg truncate">
+            Excursions
+        </h1>
 
-                <h1 class="font-bold text-lg">
-                    Excursions
-                </h1>
+        <p class="text-xs text-slate-400 truncate">
+            Experiences worth remembering
+        </p>
 
-                <p class="text-xs text-slate-400">
-                    Experiences worth remembering
-                </p>
+    </div>
 
-            </div>
+    <!-- SEARCH BUTTON -->
 
-        </div>
+    <button
+        id="excursionSearchButton"
+        type="button"
+        aria-label="Search excursions"
+        class="w-10 h-10 flex-shrink-0 rounded-xl bg-white/10 hover:bg-teal-600 flex items-center justify-center transition">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+    </button>
+
+</div>
+
+    
 
     </header>
 
+        <!-- =========================
+     EXCURSION SEARCH
+========================== -->
 
+<div
+    id="excursionSearch"
+    class="hidden sticky top-[73px] z-30 bg-slate-950/95 backdrop-blur-xl border-b border-white/10">
+
+    <div class="max-w-6xl mx-auto px-5 py-3">
+
+        <div class="relative">
+
+            <i
+                class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">
+            </i>
+
+            <input
+                type="search"
+                id="excursionSearchInput"
+                placeholder="Search excursions..."
+                autocomplete="off"
+                class="w-full bg-slate-900 border border-white/10 text-white placeholder-slate-500 rounded-2xl pl-11 pr-12 py-3.5 outline-none focus:ring-2 focus:ring-teal-500">
+
+            <button
+                id="closeExcursionSearch"
+                type="button"
+                aria-label="Close search"
+                class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl bg-white/10 text-slate-400 hover:text-white hover:bg-white/20 transition">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <p
+            id="searchResultCount"
+            class="text-xs text-slate-500 mt-2 px-1">
+        </p>
+
+    </div>
+
+</div>
 
     <!-- =========================
          MAIN
@@ -1163,7 +1218,304 @@
 
 </article>
 
+<!-- CARD 13 — BIO-KEN SNAKE FARM -->
 
+<article
+    class="excursion-card slide-left bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
+
+    <div class="relative h-56 overflow-hidden">
+
+        <img
+            src="img/farm.webp"
+            alt="Bio-Ken Snake Farm"
+            class="w-full h-full object-cover">
+
+        <span
+            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold">
+
+            Wildlife
+
+        </span>
+
+    </div>
+
+    <div class="p-5">
+
+        <p class="text-xs text-teal-400 font-semibold">
+            WATAMU
+        </p>
+
+        <h3 class="text-xl font-bold mt-1">
+            Bio-Ken Snake Farm
+        </h3>
+
+        <p class="text-slate-400 text-sm mt-2">
+            Discover Kenya's fascinating reptiles and learn about
+            snake conservation and research.
+        </p>
+
+        <button
+            type="button"
+            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+            data-service="Bio-Ken Snake Farm">
+
+            Enquire about this experience
+
+        </button>
+
+    </div>
+
+</article>
+
+
+<!-- CARD 14 — MIDA CREEK -->
+
+<article
+    class="excursion-card reveal bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
+
+    <div class="relative h-56 overflow-hidden">
+
+        <img
+            src="img/mida.jpg"
+            alt="Mida Creek"
+            class="w-full h-full object-cover">
+
+        <span
+            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold">
+
+            Nature
+
+        </span>
+
+    </div>
+
+    <div class="p-5">
+
+        <p class="text-xs text-teal-400 font-semibold">
+            WATAMU
+        </p>
+
+        <h3 class="text-xl font-bold mt-1">
+            Mida Creek
+        </h3>
+
+        <p class="text-slate-400 text-sm mt-2">
+            Explore the mangroves, waterways and beautiful coastal
+            ecosystem of Mida Creek.
+        </p>
+
+        <button
+            type="button"
+            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+            data-service="Mida Creek">
+
+            Enquire about this experience
+
+        </button>
+
+    </div>
+
+</article>
+
+
+<!-- CARD 15 — WATAMU TURTLE WATCH -->
+
+<article
+    class="excursion-card slide-right bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
+
+    <div class="relative h-56 overflow-hidden">
+
+        <img
+            src="img/turtle.jpg"
+            alt="Watamu Turtle Watch"
+            class="w-full h-full object-cover">
+
+        <span
+            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold">
+
+            Marine
+
+        </span>
+
+    </div>
+
+    <div class="p-5">
+
+        <p class="text-xs text-teal-400 font-semibold">
+            WATAMU
+        </p>
+
+        <h3 class="text-xl font-bold mt-1">
+            Watamu Turtle Watch
+        </h3>
+
+        <p class="text-slate-400 text-sm mt-2">
+            Learn about marine turtle conservation and discover the
+            important work protecting turtles along the coast.
+        </p>
+
+        <button
+            type="button"
+            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+            data-service="Watamu Turtle Watch">
+
+            Enquire about this experience
+
+        </button>
+
+    </div>
+
+</article>
+
+
+<!-- CARD 16 — VASCO DA GAMA PILLAR -->
+
+<article
+    class="excursion-card slide-left bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
+
+    <div class="relative h-56 overflow-hidden">
+
+        <img
+            src="img/vasco.jpg"
+            alt="Vasco da Gama Pillar"
+            class="w-full h-full object-cover">
+
+        <span
+            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold">
+
+            Heritage
+
+        </span>
+
+    </div>
+
+    <div class="p-5">
+
+        <p class="text-xs text-teal-400 font-semibold">
+            MALINDI
+        </p>
+
+        <h3 class="text-xl font-bold mt-1">
+            Vasco da Gama Pillar
+        </h3>
+
+        <p class="text-slate-400 text-sm mt-2">
+            Visit one of Malindi's best-known historic landmarks
+            overlooking the Indian Ocean.
+        </p>
+
+        <button
+            type="button"
+            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+            data-service="Vasco da Gama Pillar">
+
+            Enquire about this experience
+
+        </button>
+
+    </div>
+
+</article>
+
+
+<!-- CARD 17 — SARDENGA ISLAND -->
+
+<article
+    class="excursion-card reveal bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
+
+    <div class="relative h-56 overflow-hidden">
+
+        <img
+            src="img/sargena.jpeg"
+            alt="Sardegna Island"
+            class="w-full h-full object-cover">
+
+        <span
+            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold">
+
+            Island
+
+        </span>
+
+    </div>
+
+    <div class="p-5">
+
+        <p class="text-xs text-teal-400 font-semibold">
+            MALINDI
+        </p>
+
+        <h3 class="text-xl font-bold mt-1">
+            Sardegna Due
+        </h3>
+
+        <p class="text-slate-400 text-sm mt-2">
+            Escape to the water and enjoy a peaceful island
+            experience surrounded by coastal scenery.
+        </p>
+
+        <button
+            type="button"
+            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+            data-service="Sardegna Island">
+
+            Enquire about this experience
+
+        </button>
+
+    </div>
+
+</article>
+
+
+<!-- CARD 18 — KIPEPEO BUTTERFLY HOUSE -->
+
+<article
+    class="excursion-card slide-right bg-slate-900 border border-white/10 rounded-3xl overflow-hidden shadow-xl">
+
+    <div class="relative h-56 overflow-hidden">
+
+        <img
+            src="img/butterfly.jpg"
+            alt="Kipepeo Butterfly House"
+            class="w-full h-full object-cover">
+
+        <span
+            class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-xl text-xs font-semibold">
+
+            Nature
+
+        </span>
+
+    </div>
+
+    <div class="p-5">
+
+        <p class="text-xs text-teal-400 font-semibold">
+            GIRIAMA
+        </p>
+
+        <h3 class="text-xl font-bold mt-1">
+            Kipepeo Butterfly House
+        </h3>
+
+        <p class="text-slate-400 text-sm mt-2">
+            Discover colourful butterflies and learn about local
+            conservation and community-based nature projects.
+        </p>
+
+        <button
+            type="button"
+            class="excursion-select w-full mt-5 bg-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal-500 transition"
+            data-service="Kipepeo Butterfly House">
+
+            Enquire about this experience
+
+        </button>
+
+    </div>
+
+</article>
 
 
 
@@ -1401,6 +1753,54 @@
                             Other
                         </option>
 
+                        <option value="Marafa Hell's Kitchen">
+    Marafa Hell's Kitchen
+</option>
+
+<option value="Gedi Ruins">
+    Gedi Ruins
+</option>
+
+<option value="Arabuko Sokoke Forest">
+    Arabuko Sokoke Forest
+</option>
+
+<option value="Malindi Market">
+    Malindi Market
+</option>
+
+<option value="Sabaki Bridge">
+    Sabaki Bridge
+</option>
+
+<option value="Mambrui Sand Dunes">
+    Mambrui Sand Dunes
+</option>
+
+<option value="Bio-Ken Snake Farm">
+    Bio-Ken Snake Farm
+</option>
+
+<option value="Mida Creek">
+    Mida Creek
+</option>
+
+<option value="Watamu Turtle Watch">
+    Watamu Turtle Watch
+</option>
+
+<option value="Vasco da Gama Pillar">
+    Vasco da Gama Pillar
+</option>
+
+<option value="Sardegna Due">
+    Sardegna Due
+</option>
+
+<option value="Kipepeo Butterfly House">
+    Kipepeo Butterfly House
+</option>
+
                     </select>
 
                 </div>
@@ -1467,6 +1867,36 @@
                         <option value="Marafa Hell's Kitchen">
                             Marafa Hell's Kitchen
                         </option>
+
+                         <option value="Bio-Ken Snake Farm">
+                            Bio-Ken Snake Farm
+                        </option>
+
+                         <option value="Mida Creek">
+                            Mida Creek
+                        </option>
+
+                         <option value="Watamu Turtle Watch">
+                            Watamu Turtle Watch     
+                        </option>
+
+                         <option value="Vasco da Gama Pillar">
+                            Vasco da Gama Pillar
+                        </option>
+
+                         <option value="Sardegna Due">
+                            Sardegna Due
+                        </option>
+
+                         <option value="Kipepeo Butterfly House">
+                            Kipepeo Butterfly House                    
+                        </option>
+
+                        
+
+                        
+
+
 
 
 
@@ -2013,7 +2443,132 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+    <script>
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchButton =
+        document.getElementById("excursionSearchButton");
+
+    const searchBox =
+        document.getElementById("excursionSearch");
+
+    const searchInput =
+        document.getElementById("excursionSearchInput");
+
+    const closeSearch =
+        document.getElementById("closeExcursionSearch");
+
+    const cards =
+        document.querySelectorAll(".excursion-card");
+
+    const resultCount =
+        document.getElementById("searchResultCount");
+
+
+    // OPEN SEARCH
+
+    searchButton.addEventListener("click", function () {
+
+        searchBox.classList.remove("hidden");
+
+        setTimeout(() => {
+            searchInput.focus();
+        }, 100);
+
+    });
+
+
+    // CLOSE SEARCH
+
+    closeSearch.addEventListener("click", function () {
+
+        searchInput.value = "";
+
+        cards.forEach(card => {
+            card.style.display = "";
+        });
+
+        resultCount.textContent = "";
+
+        searchBox.classList.add("hidden");
+
+    });
+
+
+    // SEARCH EXCURSIONS
+
+    searchInput.addEventListener("input", function () {
+
+        const searchTerm =
+            this.value.toLowerCase().trim();
+
+        let visibleCards = 0;
+
+
+        cards.forEach(card => {
+
+            const cardText =
+                card.textContent.toLowerCase();
+
+            if (
+                searchTerm === "" ||
+                cardText.includes(searchTerm)
+            ) {
+
+                card.style.display = "";
+
+                visibleCards++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        // RESULT MESSAGE
+
+        if (searchTerm === "") {
+
+            resultCount.textContent = "";
+
+        } else if (visibleCards === 0) {
+
+            resultCount.textContent =
+                "No excursions found.";
+
+        } else {
+
+            resultCount.textContent =
+                `${visibleCards} excursion${visibleCards === 1 ? "" : "s"} found`;
+
+        }
+
+    });
+
+
+    // ESCAPE KEY
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            if (!searchBox.classList.contains("hidden")) {
+
+                closeSearch.click();
+
+            }
+
+        }
+
+    });
+
+});
+
+</script>
 
 </body>
 
