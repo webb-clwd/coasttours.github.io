@@ -1,6 +1,6 @@
 const SITE_CONFIG = {
 
-    businessName: "CoastLink Travel",
+    businessName: "Africa Timeless Escapes",
 
     tagline: "Discover the Kenyan Coast",
 
@@ -14,7 +14,7 @@ const SITE_CONFIG = {
         support: "254723237633"
     },
 
-    email: "hello@coastlinktravel.com",
+    email: "hello@Africatimelessescapes.com",
 
     location: "Watamu, Kilifi County, Kenya",
 

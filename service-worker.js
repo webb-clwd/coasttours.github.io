@@ -1,4 +1,4 @@
-const CACHE_NAME = "coastlink-v1";
+const CACHE_NAME = "Africa-Timeless-Escapes-v1";
 
 const FILES_TO_CACHE = [
     "./",

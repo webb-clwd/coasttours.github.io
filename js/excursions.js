@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
             */
 
             const message =
-                `Hello ${SITE_CONFIG.businessName}! 👋
+                `Hello ${SITE_CONFIG.businessName}! 
 
 I would like to inquire about an excursion.
 

@@ -167,7 +167,7 @@ const additionalInfo =
     // CREATE WHATSAPP MESSAGE
     // =========================
 let message =
-`Hello CoastLink, I would like to request a transfer.
+`Hello Africa Timeless Escapes, I would like to request a transfer.
 
 Passenger name: ${passengerName}
 

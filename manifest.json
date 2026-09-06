@@ -1,7 +1,7 @@
 {
-  "name": "CoastLink Travel",
-  "short_name": "CoastLink",
-  "description": "Explore the Kenyan Coast with CoastLink Travel.",
+  "name": "Africa Timeless Escapes",
+  "short_name": "Africa Timeless Escapes",
+  "description": "Explore the Kenyan Coast with Africa Timeless Escapes.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f8fafc",
